@@ -68,14 +68,6 @@
       transform: translateY(-1px);
     }
 
-    .cta-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  justify-content:flex-start;
-  margin-top:1rem;
-}
-
     .cta-min i{ font-size:1.1rem; }
   </style>
 </head>
@@ -523,60 +515,99 @@
     </section>
 
     <!--===== CONTACT =====-->
-   <section class="contact section" id="contact">
+
+<!-- ✅ COPY/PASTE: Contact section (all CTAs on ONE LINE on desktop) -->
+<section class="contact section" id="contact">
   <h2 class="section-title">Let’s connect</h2>
 
-  <div class="about__container bd-grid">
-    <div>
-      <!-- intentionally left minimal -->
-    </div>
+  <!-- local styles just for this section -->
+  <style>
+    .contact-ctas{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:nowrap;       /* ✅ force one line (desktop) */
+    }
+    .contact-ctas .cta-min{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:10px;
+      font-weight:600;
+      background:#fff;
+      color:rgba(18,18,18,0.92);
+      border:1px solid rgba(18,18,18,0.18);
+      box-shadow:none;
+      transition:0.2s;
+      white-space:nowrap;     /* ✅ never break text */
+      line-height:1;
+      font-size:0.92rem;
+    }
+    .contact-ctas .cta-min:hover{
+      border-color: rgba(18,18,18,0.35);
+      transform: translateY(-1px);
+    }
+    .contact-ctas .cta-min i{ font-size:1.1rem; }
 
-    <div>
-      <!-- Horizontal CTAs -->
-      <div class="cta-row">
-        <a
-          href="https://calendly.com/zeinebch/1-1-zeineb"
-          class="cta-min"
-          target="_blank"
-          rel="noopener"
-        >
-          <i class='bx bx-calendar-event'></i>
-          Book a meeting
-        </a>
+    /* Optional: make the last CTA slightly more subtle (comment out if you want same weight) */
+    .contact-ctas .cta-min.reference{ opacity:0.85; }
 
-        <a
-          href="https://www.linkedin.com/in/zeineb-chabchoub/"
-          class="cta-min"
-          target="_blank"
-          rel="noopener"
-        >
-          <i class='bx bxl-linkedin'></i>
-          LinkedIn
-        </a>
+    /* ✅ Mobile: allow wrapping so it doesn't overflow */
+    @media (max-width: 720px){
+      .contact-ctas{
+        flex-wrap:wrap;
+      }
+    }
+  </style>
 
-        <a
-          href="https://medium.com/@zeineb.chabchoub.01"
-          class="cta-min"
-          target="_blank"
-          rel="noopener"
-        >
-          <i class='bx bx-link-external'></i>
-          Medium
-        </a>
+  <div class="bd-grid" style="justify-items:center;">
+    <div class="contact-ctas">
+      <a
+        href="https://calendly.com/zeinebch/1-1-zeineb"
+        class="cta-min"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class='bx bx-calendar-event'></i>
+        Book a meeting
+      </a>
 
-        <a
-          href="https://calendly.com/zeinebch/1-1-zeineb"
-          class="cta-min"
-          target="_blank"
-          rel="noopener"
-        >
-          <i class='bx bx-badge-check'></i>
-          Request a reference
-        </a>
-      </div>
+      <a
+        href="https://www.linkedin.com/in/zeineb-chabchoub/"
+        class="cta-min"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class='bx bxl-linkedin'></i>
+        LinkedIn
+      </a>
+
+      <a
+        href="https://medium.com/@zeineb.chabchoub.01"
+        class="cta-min"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class='bx bx-link-external'></i>
+        Medium
+      </a>
+
+      <a
+        href="https://calendly.com/zeinebch/1-1-zeineb"
+        class="cta-min reference"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class='bx bx-badge-check'></i>
+        Request a reference
+      </a>
     </div>
   </div>
 </section>
+
 
 
   </main>
