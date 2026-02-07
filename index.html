@@ -5,14 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
-  <title>Zeineb Chabchoub | Venture Builder & Ecosystem Architect</title>
+  <title>Zeineb Chabchoub | Startup Ecosystem Operator</title>
+
+  <!-- Light image cropping helpers (no CSS file changes needed) -->
+  <style>
+    .work__img img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    @media screen and (min-width: 768px) {
+      .work__img img {
+        height: 200px;
+      }
+    }
+    .skills__img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    @media screen and (min-width: 768px) {
+      .skills__img {
+        height: 320px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <!--===== HEADER =====-->
   <header class="l-header">
     <nav class="nav bd-grid">
       <div>
-        <a href="#home" class="nav__logo">Zeineb Chabchoub </a>
+        <a href="#home" class="nav__logo">Zeineb Chabchoub</a>
       </div>
 
       <div class="nav__menu" id="nav-menu">
@@ -33,28 +58,31 @@
 
   <main class="l-main">
 
-    <!--===== HOME 
+    <!--===== HOME =====-->
     <section class="home bd-grid" id="home">
       <div class="home__data">
-      <h1 class="home__title">
-        Hi,<br />
-        I'm <span class="home__title-color">Zeineb Chabchoub </span><br />
-        Venture Builder & Ecosystem Architect
-      </h1>
-        <p style="margin-bottom:1.5rem; max-width:480px;">
-          Tunisian founder and ecosystem builder with work across North Africa, Europe, and the U.S.
-          Give me ambiguity and a deadline—I map it, de-risk it, and move it forward.
+        <h1 class="home__title">
+          Hi,<br />
+          I'm <span class="home__title-color">Zeineb Chabchoub</span><br />
+          Startup Ecosystem Operator
+        </h1>
+
+        <p style="margin-bottom:1.5rem; max-width:520px;">
+          I’m a startup ecosystem operator with experience across North Africa, Europe, and the U.S. I started as a founder,
+          which shaped how I work: I read context quickly, respect institutional realities, and focus on what actually moves founders forward.
         </p>
 
-        <!-- Request a meeting (eMailbox) 
+        <!-- CTA: Calendly -->
         <a
-          href="mailto:zeineb.chabchoub.01@gmail.com?subject=Meeting%20Request&body=Hi%20Zeineb%2C%0D%0A%0D%0AI%27d%20like%20to%20request%20a%20meeting%20to%20discuss..."
+          href="https://calendly.com/zeinebch/1-1-zeineb"
           class="button"
+          target="_blank"
+          rel="noopener"
         >
-          <i class='bx bx-calendar-event' style="margin-right:8px;"></i> Request a Meeting
+          <i class='bx bx-calendar-event' style="margin-right:8px;"></i> Book a meeting
         </a>
 
-        <!-- LinkedIn 
+        <!-- LinkedIn -->
         <a
           href="https://www.linkedin.com/in/zeineb-chabchoub/"
           class="button"
@@ -64,13 +92,36 @@
         >
           <i class='bx bxl-linkedin' style="margin-right:8px;"></i> LinkedIn
         </a>
+
+        <!-- Medium -->
+        <a
+          href="https://medium.com/@zeineb.chabchoub.01"
+          class="button"
+          target="_blank"
+          rel="noopener"
+          style="margin-left:0.75rem;"
+        >
+          <i class='bx bx-link-external' style="margin-right:8px;"></i> Medium
+        </a>
+
+        <p style="margin-top:0.9rem;">
+          Reference could be provided upon request —
+          <a
+            href="https://calendly.com/zeinebch/1-1-zeineb"
+            target="_blank"
+            rel="noopener"
+            style="text-decoration:underline;"
+          >
+            request a reference via meeting
+          </a>.
+        </p>
       </div>
 
- <div class="about__img">
-          <img src="assets/img/zeineb.JPEG" alt="Zeineb Chabchoub" />
-        </div>
+      <div class="about__img">
+        <img src="assets/img/zeineb.JPEG" alt="Zeineb Chabchoub" />
+      </div>
     </section>
-=====-->
+
     <!--===== ABOUT =====-->
     <section class="about section" id="about">
       <h2 class="section-title">About</h2>
@@ -78,20 +129,69 @@
         <div class="about__img">
           <img src="assets/img/zeineb.JPEG" alt="Zeineb Chabchoub" />
         </div>
+
         <div>
           <h2 class="about__subtitle">I'm Zeineb</h2>
+
           <p class="about__text">
-            Tunisian founder and ecosystem builder with work across North Africa, Europe, and the U.S.
-            I read context fast and work respectfully within it. Give me ambiguity and a deadline—
-            I map it, de-risk it, and move it forward. My north star: help innovators turn real problems into pilots,
-            contracts, and measurable outcomes.
+            I’m a startup ecosystem operator with experience across North Africa, Europe, and the U.S. I started as a founder,
+            which shaped how I work: I read context quickly, respect institutional realities, and focus on what actually moves founders forward.
+            <br /><br />
+            I’ve worked closely with founders from diverse backgrounds, across geographies (North Africa, Europe, and the U.S.)
+            and academic paths, including university spin-outs, experienced professionals, and newly graduated founders.
+            <br /><br />
+            My north star is simple: help founders create value and reach markets and capital without losing momentum.
           </p>
-          <ul style="margin-top:1rem; list-style:disc; padding-left:1.2rem;">
-            <li>7+ years’ experience in venture building, startup support, and innovation programs.</li>
-            <li>Experience across academia, development agencies, and startups (founder & operator).</li>
-            <li>Specialized in go-to-market strategy, expansion programs, and ecosystem design.</li>
-            <li>Speaks: Arabic • French • English.</li>
-          </ul>
+
+          <p style="margin-top:0.75rem;">
+            <strong>Languages:</strong> Arabic (native) · English · French
+          </p>
+
+          <div style="margin-top:1.25rem;">
+            <a
+              href="https://calendly.com/zeinebch/1-1-zeineb"
+              class="button"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class='bx bx-calendar-event' style="margin-right:8px;"></i>
+              Book a meeting
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/zeineb-chabchoub/"
+              class="button"
+              target="_blank"
+              rel="noopener"
+              style="margin-left:0.75rem;"
+            >
+              <i class='bx bxl-linkedin' style="margin-right:8px;"></i>
+              LinkedIn
+            </a>
+
+            <a
+              href="https://medium.com/@zeineb.chabchoub.01"
+              class="button"
+              target="_blank"
+              rel="noopener"
+              style="margin-left:0.75rem;"
+            >
+              <i class='bx bx-link-external' style="margin-right:8px;"></i>
+              Medium
+            </a>
+          </div>
+
+          <p style="margin-top:0.9rem;">
+            Reference could be provided upon request —
+            <a
+              href="https://calendly.com/zeinebch/1-1-zeineb"
+              target="_blank"
+              rel="noopener"
+              style="text-decoration:underline;"
+            >
+              request a reference via meeting
+            </a>.
+          </p>
         </div>
       </div>
     </section>
@@ -100,52 +200,101 @@
     <section class="skills section" id="case-studies">
       <h2 class="section-title">Case Studies</h2>
 
-      <!-- Doman Innovation Studio / University of Utah -->
+      <!-- Doman Innovation Studio -->
       <div class="skills__container bd-grid">
         <div>
-          <h2 class="skills__subtitle">Doman Innovation Studio — Founder Experience & Ecosystem Map</h2>
+          <h2 class="skills__subtitle">Doman Innovation Studio — Research Associate</h2>
+
           <p class="skills__text">
-            At the University of Utah’s David Eccles School of Business, Zeineb helped bring clarity to a complex
-            innovation ecosystem where funders, trustees, faculty, and founders lacked a shared map of “who does what, when.”
+            At Doman Innovation Studio, our north star is helping founders tackle their “next-hardest step.” While coaching teams across campus,
+            we encountered an abundance of programs, labs, mentors, and funding sources. Yet there was no easily accessible, high-level view that
+            brought these resources together in one place. As a result, it was challenging for us to see the full picture of what existed across
+            the University of Utah and to consistently guide founders toward the programs and support that best matched their needs at a given moment.
+            The U Venture Ecosystem Map grew out of that insight.
           </p>
+
+          <p><strong>What I did</strong></p>
           <ul>
-            <li>Ecosystem strategy tool mapping 100+ programs across 30+ on-campus organizations.</li>
-            <li>Impact framework and KPI dashboard enabling donor-ready, data-driven reporting.</li>
-            <li>Structured founder journey across 9 cohorts/year (~30+ founders) with clear touchpoints.</li>
+            <li>Built an ecosystem strategy and mapping tool, covering 100+ programs across 30+ university entities.</li>
+            <li>Conducted 30+ conversations with individuals working across different programs, departments, and institutions on campus.</li>
           </ul>
+
           <p style="margin-top:0.75rem;">
-            <strong>Results:</strong> Faster founder intake and navigation, clearer handoffs, and better touchpoint completion.
+            <strong>Results</strong><br /><br />
+            Institutional perspective: The mapping process became an organizational learning tool. We surfaced how founder support actually operates
+            day to day, not just how it is designed. Sharing early versions of the map aligned teams around a common goal: measuring success by founder outcomes,
+            not program ownership.<br /><br />
+            Founder-facing perspective: The map shifted how we support founders—from explaining individual programs to actively guiding founders through the broader ecosystem,
+            helping them access the right support, at the right time, from the right people. Orientation and navigation became as critical as programming.<br /><br />
+            Ecosystem perspective: By making the full system visible, the map created connective tissue across university programs. Instead of handoffs and referrals,
+            teams could collaborate across units, align around founder goals, and operate as an integrated ecosystem.
           </p>
+
           <p style="margin-top:0.5rem;">
-            <a href="https://eccles.utah.edu/doman/" target="_blank" rel="noopener">Read more: U of U Venture Ecosystem Map</a>
+            <a
+              href="https://fulbrightmena.medium.com/building-a-clearer-path-from-campus-ideas-to-real-world-application-7f5169f12aa3"
+              target="_blank"
+              rel="noopener"
+            >
+              Read more: U of U Venture Ecosystem Map
+            </a>
           </p>
         </div>
+
         <div>
-          <img src="assets/img/doman.jpg" alt="Doman Innovation Studio" class="skills__img" />
+          <img src="assets/img/U map.jpeg" alt="U Venture Ecosystem Map" class="skills__img" />
         </div>
       </div>
 
-      <!-- GIZ Tunisia – Digital Transformation Center -->
+      <!-- MBA Consulting Projects -->
       <div class="skills__container bd-grid">
         <div>
-          <img src="assets/img/giz.jpg" alt="GIZ Tunisia" class="skills__img" />
+          <img src="assets/img/U map.jpeg" alt="MBA Consulting Projects" class="skills__img" />
         </div>
+
+        <div>
+          <h2 class="skills__subtitle">MBA Consulting Projects — University of Utah</h2>
+          <p class="skills__text">
+            MBA Student Consultant | Salt Lake City, UT | Sep 2024 – Apr 2025<br />
+            Scope: Applied strategy and commercialization work across early-stage ventures and research-driven spin-outs.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Wilkes Center (Climate-Tech Spin-out):</strong>
+              Conducted market and financial analysis to support commercialization decisions, clarify risk areas, and inform next-step recommendations.
+            </li>
+            <li>
+              <strong>FluxPrompt (AI SaaS):</strong>
+              Designed a market entry and GTM assessment, preparing executive-ready materials and presenting findings to senior management and C-level stakeholders.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GIZ Tunisia -->
+      <div class="skills__container bd-grid">
+        <div>
+          <img src="assets/img/Flywheel.jpg" alt="Flywheel — National Innovation Fund" class="skills__img" />
+        </div>
+
         <div>
           <h2 class="skills__subtitle">Digital Transformation Center, GIZ Tunisia</h2>
           <p class="skills__text">
-            Over three years, Zeineb built programs around one thesis:
-            <em>startups are drivers of the digital economy</em>. She designed support across three pillars:
-            access to finance, markets, and expertise.
+            Over three years, my work followed a simple thesis:
+            <em>startups are engines of the digital economy—but only if capital, markets, and expertise move together.</em>
           </p>
+
           <ul>
-            <li><strong>Access to Finance – Flywheel:</strong> Multi-instrument national innovation fund (AIR, AIR², DEAL, SAIL) supporting startups and SSOs.</li>
-            <li><strong>Access to Markets – STRIDE & Open Innovation:</strong> Regional expansion program (Tunisia → Africa) and OI tracks (Scan & Match, Link4INN, Start’N’Trade) leading to concrete PoCs and market entries.</li>
-            <li><strong>Access to Expertise – CoworkUp & Go Rise:</strong> Scaling SSO capacity and designing mentoring journeys for 20+ founders with international mentors.</li>
+            <li><strong>Access to Finance – Flywheel:</strong> National innovation fund with multiple instruments supporting startups and startup support organizations.</li>
+            <li><strong>Access to Markets – STRIDE & Open Innovation:</strong> Regional expansion (Tunisia → Africa) and open innovation tracks leading to market entries and PoCs.</li>
+            <li><strong>Access to Expertise – CoworkUp & Go Rise:</strong> Scaling SSO capacity and building mentoring journeys with international mentors.</li>
           </ul>
+
           <p style="margin-top:0.75rem;">
-            <strong>Selected outcomes:</strong> national fund operations covering 100+ startups and 20+ incubators,
-            60 founders trained for African expansion, and 30 SSOs supported with stronger tools and QA standards.
+            <strong>Selected outcomes:</strong> programs impacting 2,000+ innovators and 30+ startup support organizations.
           </p>
+
           <p style="margin-top:0.5rem;">
             <a href="https://startup.gov.tn/en/startup_ecosystem/flywheel" target="_blank" rel="noopener">Flywheel – National Innovation Fund</a><br />
             <a href="https://westerwelle-foundation.com/stride/" target="_blank" rel="noopener">STRIDE – Regional Expansion Program</a><br />
@@ -154,13 +303,13 @@
         </div>
       </div>
 
-      <!-- Alien Dimension – AR EdTech -->
+      <!-- Alien Dimension -->
       <div class="skills__container bd-grid">
         <div>
           <h2 class="skills__subtitle">Alien Dimension — AR EdTech (Founder)</h2>
           <p class="skills__text">
-            As Co-Founder and Chief Projects Officer of Alien Dimension, Zeineb brought augmented reality
-            into real classrooms and university settings, working at the intersection of pedagogy and technology.
+            As Co-Founder and Chief Projects Officer of Alien Dimension, I brought augmented reality into real classrooms,
+            working at the intersection of pedagogy and technology.
           </p>
           <ul>
             <li>Raised €150K pre-seed and led a 6-person software + marketing team.</li>
@@ -168,8 +317,7 @@
             <li>Structured sprints, KPIs, and delivery milestones, implementing Agile practices.</li>
           </ul>
           <p style="margin-top:0.75rem;">
-            <strong>Lessons learned (her To-Don’t List):</strong> Validate the payer (not just the user),
-            be ruthless about burn and scope, write cofounder agreements early, and protect founder energy.
+            <strong>Lessons learned:</strong> Validate the payer (not just the user), be ruthless about burn and scope, write cofounder agreements early, and protect founder energy.
           </p>
           <p style="margin-top:0.5rem;">
             <a href="http://www.aliendimension.com/#/" target="_blank" rel="noopener">Site</a> ·
@@ -177,8 +325,9 @@
             <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7322056423377367040" target="_blank" rel="noopener">Newsletter</a>
           </p>
         </div>
+
         <div>
-          <img src="assets/img/alien-dimension.jpg" alt="Alien Dimension" class="skills__img" />
+          <img src="assets/img/GITEX Africa.png" alt="Alien Dimension" class="skills__img" />
         </div>
       </div>
     </section>
@@ -186,44 +335,48 @@
     <!--===== SPEAKING & MEDIA =====-->
     <section class="work section" id="speaking">
       <h2 class="section-title">Speaking & Media</h2>
+
       <div class="work__container bd-grid">
         <div class="work__item">
           <div class="work__img">
-            <img src="assets/img/slushd.jpg" alt="Slush'D Djerba" />
+            <img src="assets/img/slushDjerba.jpeg" alt="Slush’D (Djerba, 2024)" />
           </div>
           <h3 class="work__title">Slush’D (Djerba, 2024)</h3>
-          <p style="text-align:center;">Positioning Tunisia on the global impact-tech stage.</p>
         </div>
 
         <div class="work__item">
           <div class="work__img">
-            <img src="assets/img/aim.jpg" alt="AIM Congress Abu Dhabi" />
+            <img src="assets/img/AIMcongress.jpeg" alt="AIM Congress (Abu Dhabi, 2024)" />
           </div>
           <h3 class="work__title">AIM Congress (Abu Dhabi, 2024)</h3>
-          <p style="text-align:center;">Sharing lessons from startup ecosystems across Africa and MENA.</p>
         </div>
 
         <div class="work__item">
           <div class="work__img">
-            <img src="assets/img/gitex.jpg" alt="GITEX Africa" />
+            <img src="assets/img/GITEX Africa 2.png" alt="GITEX Africa (2023)" />
           </div>
-          <h3 class="work__title">GITEX Africa & African Startup Conf.</h3>
-          <p style="text-align:center;">Showcasing founders and building cross-border pipelines.</p>
+          <h3 class="work__title">GITEX Africa (2023)</h3>
         </div>
       </div>
 
       <div class="work__container bd-grid" style="margin-top:2rem;">
         <div class="work__item">
           <div class="work__img">
-            <img src="assets/img/young-founders.jpg" alt="Young Founders Program" />
+            <img src="assets/img/AfricanStartupConference.jpeg" alt="African Startup Conference (Algeria, 2023)" />
           </div>
-          <h3 class="work__title">Young Founders Program (Berlin, 2023)</h3>
-          <p style="text-align:center;">Supporting international founder cohorts.</p>
+          <h3 class="work__title">African Startup Conference (Algeria, 2023)</h3>
         </div>
 
         <div class="work__item">
           <div class="work__img">
-            <img src="assets/img/newsletter.jpg" alt="Startup Lessons Newsletter" />
+            <img src="assets/img/Berlin.jpeg" alt="Young Founders Program (Berlin, 2023)" />
+          </div>
+          <h3 class="work__title">Young Founders Program (Berlin, 2023)</h3>
+        </div>
+
+        <div class="work__item">
+          <div class="work__img">
+            <img src="assets/img/slushDjerba.jpeg" alt="Startup Lessons Newsletter" />
           </div>
           <h3 class="work__title">Startup Lessons Newsletter</h3>
           <p style="text-align:center;">
@@ -245,29 +398,29 @@
     <!--===== CONTACT / REQUEST A MEETING =====-->
     <section class="contact section" id="contact">
       <h2 class="section-title">Request a Meeting</h2>
+
       <div class="about__container bd-grid">
         <div>
-          <h2 class="about__subtitle">Let’s collaborate</h2>
+          <h2 class="about__subtitle">Let’s connect</h2>
           <p class="about__text">
-            Whether you’re designing a new innovation program, planning a cross-border expansion,
-            or looking for a mentor / speaker to bring real founder experience to your audience,
-            Zeineb is open to conversations with universities, ecosystem builders, funds, and corporates.
+            If you want to collaborate, explore a program idea, discuss spinouts, or share context, book time and we’ll take it from there.
           </p>
           <p style="margin-top:0.75rem;">
-            Share a few lines about your context, your timeline, and what success would look like,
-            and she’ll get back to you.
+            Reference could be provided upon request — book a meeting and mention it in the notes.
           </p>
         </div>
 
         <div>
           <div style="margin-bottom:1rem;">
-            <h3 style="margin-bottom:0.25rem;">eMailbox</h3>
+            <h3 style="margin-bottom:0.25rem;">Book a meeting</h3>
             <a
-              href="mailto:zeineb.chabchoub.01@gmail.com?subject=Meeting%20Request&body=Hi%20Zeineb%2C%0D%0A%0D%0AHere%20is%20a%20short%20description%20of%20my%20project%2Fcontext%3A%0D%0A-%20Organization%3A%0D%0A-%20Topic%3A%0D%0A-%20Timeline%3A%0D%0A-%20What%20success%20would%20look%20like%3A%0D%0A"
+              href="https://calendly.com/zeinebch/1-1-zeineb"
+              target="_blank"
+              rel="noopener"
               class="button"
             >
-              <i class='bx bx-envelope' style="margin-right:8px;"></i>
-              Email Zeineb
+              <i class='bx bx-calendar-event' style="margin-right:8px;"></i>
+              Calendly
             </a>
           </div>
 
@@ -284,12 +437,31 @@
             </a>
           </div>
 
-          <div>
-            <h3 style="margin-bottom:0.25rem;">Phone (optional)</h3>
-            <p>
-              <i class='bx bx-phone' style="margin-right:6px;"></i>
-              <span>+1 (385) 443-9164</span>
-            </p>
+          <div style="margin-bottom:1rem;">
+            <h3 style="margin-bottom:0.25rem;">Medium</h3>
+            <a
+              href="https://medium.com/@zeineb.chabchoub.01"
+              target="_blank"
+              rel="noopener"
+              class="button"
+            >
+              <i class='bx bx-link-external' style="margin-right:8px;"></i>
+              Read on Medium
+            </a>
+          </div>
+
+          <div style="margin-bottom:1rem;">
+            <h3 style="margin-bottom:0.25rem;">Reference</h3>
+            <p style="margin-bottom:0.5rem;">Reference could be provided upon request.</p>
+            <a
+              href="https://calendly.com/zeinebch/1-1-zeineb"
+              target="_blank"
+              rel="noopener"
+              class="button"
+            >
+              <i class='bx bx-badge-check' style="margin-right:8px;"></i>
+              Request a reference
+            </a>
           </div>
         </div>
       </div>
@@ -304,8 +476,11 @@
       <a href="https://www.linkedin.com/in/zeineb-chabchoub/" target="_blank" rel="noopener" class="footer__icon">
         <i class="bx bxl-linkedin"></i>
       </a>
-      <a href="mailto:zeineb.chabchoub.01@gmail.com" class="footer__icon">
-        <i class="bx bx-envelope"></i>
+      <a href="https://medium.com/@zeineb.chabchoub.01" target="_blank" rel="noopener" class="footer__icon">
+        <i class="bx bx-link-external"></i>
+      </a>
+      <a href="https://calendly.com/zeinebch/1-1-zeineb" target="_blank" rel="noopener" class="footer__icon">
+        <i class="bx bx-calendar-event"></i>
       </a>
     </div>
     <p class="footer__copy">&#169; 2025 - Zeineb Chabchoub. All rights reserved.</p>
