@@ -11,6 +11,28 @@ const showMenu = (toggleId, navId) =>{
 }
 showMenu('nav-toggle','nav-menu')
 
+
+const modal = document.getElementById("imageModal");
+const img = document.getElementById("mapImage");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".img-close");
+
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+}
+
+closeBtn.onclick = function(){
+  modal.style.display = "none";
+}
+
+modal.onclick = function(e){
+  if(e.target === modal){
+    modal.style.display = "none";
+  }
+}
+
+
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
 
