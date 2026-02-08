@@ -398,7 +398,7 @@ img {
     margin-right: var(--mb-4);
   }
   .home__img {
-    width: 2600px;
+    width: 260px;
     bottom: 10%;
   }
   
@@ -525,4 +525,202 @@ img {
   color:#fff;
   font-size:40px;
   cursor:pointer;
+}
+
+
+/* ===== DESIGN IMPROVEMENTS (2026) ===== */
+:root{
+  /* smoother spacing + readable text */
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(14,36,49,0.10);
+  --shadow-soft: 0 6px 18px rgba(14,36,49,0.08);
+}
+
+/* Better typography */
+body{
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: #fff;
+}
+
+p{ 
+  line-height: 1.75;
+}
+h1, h2, h3{
+  letter-spacing: -0.01em;
+}
+
+/* Safer container gutters on mobile */
+.bd-grid{
+  width: min(1100px, 100%);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make sections breathe */
+.section{
+  padding-top: 4rem;
+  padding-bottom: 3.25rem;
+}
+@media (max-width: 720px){
+  .section{
+    padding-top: 3.25rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Titles: nicer scale */
+.section-title{
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  margin-bottom: 2.25rem;
+}
+.section-title::after{
+  background: rgba(0,0,0,0.08);
+  height:1px;
+}
+
+
+/* NAV: better tap targets + subtle border */
+.l-header{
+  border-bottom: 1px solid rgba(18,18,18,0.06);
+}
+.nav{
+  height: calc(var(--header-height) + 1.1rem);
+}
+.nav__link{
+  padding: .4rem 0;
+}
+@media screen and (max-width: 767px){
+  .nav__menu{
+    width: min(360px, 88%);
+    border-left: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav__item{
+    margin-bottom: 1.3rem;
+  }
+}
+
+/* Cards for Awards */
+.award-item{
+  background:#fff;
+  border: 1px solid rgba(18,18,18,0.10);
+  border-radius: var(--radius);
+  padding: 1rem 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Project blocks: look like cards */
+.skills__container{
+  gap: 1.5rem;
+}
+.skills__container.bd-grid > div{
+  background:#fff;
+  border: 1px solid rgba(18,18,18,0.10);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+.skills__container.one-col > div{
+  width: 100%;
+}
+
+/* Better text alignment on desktop */
+@media (min-width: 768px){
+  .skills__container{
+    text-align: left;
+  }
+  .about__container{
+    text-align: left;
+  }
+}
+
+/* Images: consistent rounding and hover */
+.skills__img,
+.work__img{
+  border-radius: var(--radius);
+}
+.work__img{
+  box-shadow: var(--shadow);
+}
+.work__img img{
+  will-change: transform;
+}
+
+/* Make map look clickable */
+#mapImage{
+  cursor: zoom-in;
+}
+
+/* Contact buttons wrap nicely */
+.contact-ctas{
+  gap: 10px;
+}
+
+/* Improve lists */
+ul{
+  padding-left: 1.1rem;
+}
+li{
+  margin: .4rem 0;
+}
+
+/* Popup: center + animate a bit */
+.img-modal{
+  padding-top: 4.5rem;
+}
+.img-modal-content{
+  border-radius: 12px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+  animation: popIn .18s ease-out;
+}
+@keyframes popIn{
+  from{ transform: scale(.98); opacity: .6; }
+  to{ transform: scale(1); opacity: 1; }
+}
+/* CARD HOVER */
+.skills__container > div,
+.work__item,
+.award-item{
+  transition: all 0.35s ease;
+}
+
+.skills__container > div:hover,
+.work__item:hover,
+.award-item:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+.skills__img{
+  transition: transform .5s ease;
+}
+
+.skills__img:hover{
+  transform: scale(1.03);
+}
+.cta-min{
+  transition: all .25s ease;
+}
+
+.cta-min:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.nav{
+  transition: all .3s ease;
+}
+
+.l-header{
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.75);
+}
+.img-modal-content{
+  animation: zoom .4s ease;
+}
+
+@keyframes zoom{
+  from{ transform:scale(.8); opacity:0 }
+  to{ transform:scale(1); opacity:1 }
 }

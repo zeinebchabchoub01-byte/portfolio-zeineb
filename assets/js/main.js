@@ -17,20 +17,54 @@ const img = document.getElementById("mapImage");
 const modalImg = document.getElementById("modalImg");
 const closeBtn = document.querySelector(".img-close");
 
-img.onclick = function(){
+function openModalWith(src){
+  if(!modal || !modalImg) return;
   modal.style.display = "block";
-  modalImg.src = this.src;
+  modalImg.src = src;
+  document.body.style.overflow = "hidden";
 }
 
-closeBtn.onclick = function(){
+function closeModal(){
+  if(!modal) return;
   modal.style.display = "none";
+  document.body.style.overflow = "";
 }
 
-modal.onclick = function(e){
-  if(e.target === modal){
-    modal.style.display = "none";
-  }
+if (img){
+  img.addEventListener("click", () => openModalWith(img.src));
 }
+
+if (closeBtn){
+  closeBtn.addEventListener("click", closeModal);
+}
+
+if (modal){
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal) closeModal();
+  });
+}
+
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape") closeModal();
+});
+
+/* ===== SCROLL ANIMATIONS ===== */
+const sr = ScrollReveal({
+  origin: 'bottom',
+  distance: '40px',
+  duration: 900,
+  delay: 100,
+  reset: false
+});
+
+/* sections */
+sr.reveal('.section-title', {});
+/* ABOUT */
+sr.reveal('.about__container', { interval: 150 });
+sr.reveal('.skills__container > div', { interval: 150 });
+sr.reveal('.work__item', { interval: 150 });
+sr.reveal('.contact-ctas a', { interval: 120 });
+
 
 
 /*==================== REMOVE MENU MOBILE ====================*/
