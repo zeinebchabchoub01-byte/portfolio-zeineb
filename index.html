@@ -115,7 +115,284 @@
     .work__item{
       overflow: hidden;
     }
-     
+         .articles-wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .articles-group{
+      margin: 0 auto 2.25rem;
+    }
+
+    .articles-group__header{
+      display:flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 0.75rem;
+    }
+
+    .articles-group__title{
+      font-weight: 700;
+      margin: 0;
+      opacity: 0.92;
+    }
+
+    .articles-group__subtitle{
+      margin: 0;
+      opacity: 0.75;
+      line-height: 1.35;
+      font-size: 0.95rem;
+    }
+    
+
+
+    /* Card */
+    
+    .article-card{
+      scroll-snap-align: start;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(18,18,18,0.12);
+      background: #fff;
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.2s ease;
+      text-decoration: none;
+    }
+
+    .article-card:hover{
+      border-color: rgba(18,18,18,0.35);
+      transform: translateY(-2px);
+    }
+
+    .article-card__media{
+      position: relative;
+      height: 150px;
+      background: rgba(18,18,18,0.03);
+      overflow: hidden;
+    }
+
+    .article-card__media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.02);
+    }
+
+    /* Gradient overlay for readability */
+    .article-card__media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,0.22), rgba(0,0,0,0.0));
+      pointer-events:none;
+    }
+
+    .article-card__body{
+      padding: 0.95rem 1rem 1rem;
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .article-card__title{
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: rgba(18,18,18,0.92);
+    }
+
+    .article-card__cta{
+      margin-top: auto;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-weight: 700;
+      text-decoration: underline;
+      color: rgba(18,18,18,0.92);
+    }
+
+    /* Carousel arrows */
+    .carousel__btn{
+      position:absolute;
+      top: 58px;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid rgba(18,18,18,0.18);
+      background: rgba(255,255,255,0.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition: 0.2s ease;
+      z-index: 5;
+    }
+    .carousel__btn:hover{
+      border-color: rgba(18,18,18,0.35);
+      transform: translateY(-1px);
+    }
+    .carousel__btn--prev{ left: -8px; }
+    .carousel__btn--next{ right: -8px; }
+
+    @media (max-width: 720px){
+      .carousel__btn{ display:none; }
+    }
+
+    .articles-divider{
+      height: 1px;
+      background: rgba(18,18,18,0.10);
+      margin: 1.5rem 0 0;
+    }
+    
+         /* Carousel wrapper */
+    .speaking-wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .carousel{
+      position: relative;
+    }
+
+    .carousel__track{
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 80%;
+      gap: 14px;
+
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+
+      padding: 0.25rem 0.25rem 0.75rem;
+      scrollbar-width: none;
+    }
+    .carousel__track::-webkit-scrollbar{ display:none; }
+
+    @media (min-width: 560px){
+      .carousel__track{ grid-auto-columns: 55%; }
+    }
+    @media (min-width: 820px){
+      .carousel__track{ grid-auto-columns: 33%; }
+    }
+    
+            /* Carousel */
+    .carousel{
+      position: relative;
+    }
+
+    .carousel__track{
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 78%;
+      gap: 14px;
+
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+
+      padding: 0.25rem 0.25rem 0.75rem;
+      scrollbar-width: none;
+    }
+    .carousel__track::-webkit-scrollbar{ display:none; }
+
+    @media (min-width: 560px){
+      .carousel__track{ grid-auto-columns: 52%; }
+    }
+    @media (min-width: 820px){
+      .carousel__track{ grid-auto-columns: 32%; }
+    }
+
+    /* Speaking card */
+    .speaking-card{
+      scroll-snap-align: start;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(18,18,18,0.12);
+      background: #fff;
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 320px;
+    }
+
+    .speaking-card:hover{
+      border-color: rgba(18,18,18,0.35);
+      transform: translateY(-2px);
+    }
+
+    .speaking-card__media{
+      height: 170px;
+      overflow: hidden;
+    }
+
+    .speaking-card__media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .speaking-card__body{
+      padding: 0.9rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .speaking-card__title{
+      margin: 0;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .speaking-topics{
+      margin: 0;
+      padding-left: 1.05rem;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      opacity: 0.9;
+    }
+
+    .speaking-topics li{
+      margin: 0.25rem 0;
+    }
+
+    /* Carousel arrows */
+    .carousel__btn{
+      position:absolute;
+      top: 70px;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid rgba(18,18,18,0.18);
+      background: rgba(255,255,255,0.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition: 0.2s ease;
+      z-index: 5;
+    }
+    .carousel__btn:hover{
+      border-color: rgba(18,18,18,0.35);
+      transform: translateY(-1px);
+    }
+    .carousel__btn--prev{ left: -8px; }
+    .carousel__btn--next{ right: -8px; }
+
+    @media (max-width: 720px){
+      .carousel__btn{ display:none; }
+    }
     
   </style>
 </head>
@@ -808,302 +1085,126 @@ Go Rise: International Mentoring Program (2021-2022)
 
     </section>
 
-    <!--===== SPEAKING & MEDIA =====-->
-    <section class="work section" id="speaking">
+
+<!--===== SPEAKING & MEDIA =====-->
+<section class="work section" id="speaking">
   <h2 class="section-title">Speaking & Media</h2>
 
-  <!-- Local styles (responsive topics, clean spacing) -->
-  <style>
-    .work__meta{
-      padding: 0.85rem 0.9rem 1rem;
-    }
-    .work__title{
-      margin: 0.65rem 0 0.4rem;
-    }
-    .work__topics{
-      margin: 0;
-      padding-left: 1.05rem;
-      opacity: 0.92;
-      line-height: 1.45;
-      font-size: 0.95rem;
-    }
-    .work__topics li{
-      margin: 0.25rem 0;
-    }
-    /* Keep cards consistent if your CSS uses hover/box styles */
-    .work__item{
-      overflow: hidden;
-    }
-  </style>
+  <div class="speaking-wrap">
 
-  <div class="work__container bd-grid">
+    <div class="carousel">
+      <button class="carousel__btn carousel__btn--prev" type="button"
+        onclick="document.getElementById('track-speaking').scrollBy({left:-800,behavior:'smooth'})"
+        aria-label="Scroll left">
+        <i class='bx bx-chevron-left'></i>
+      </button>
 
-    <!-- Slush'D -->
-    <div class="work__item">
-      <div class="work__img">
-        <img src="assets/img/slushDjerba.jpeg" alt="Slush’D (Djerba, 2024)" />
-      </div>
-      <div class="work__meta">
-        <h3 class="work__title">Slush’D (Djerba, 2024)</h3>
-        <ul class="work__topics">
-          <li><strong>Roundtable:</strong> The Future of Funding in Africa</li>
-          <li><strong>Panel:</strong> Building Bridges — VC insights on Africa’s growth</li>
-        </ul>
-      </div>
-    </div>
+      <div class="carousel__track" id="track-speaking">
 
-    <!-- AIM Congress -->
-    <div class="work__item">
-      <div class="work__img">
-        <img src="assets/img/AIMcongress.jpeg" alt="AIM Congress (Abu Dhabi, 2024)" />
-      </div>
-      <div class="work__meta">
-        <h3 class="work__title">AIM Congress (Abu Dhabi, 2024)</h3>
-        <ul class="work__topics">
-          <li>The rising of Agritech Startups</li>
-        </ul>
-      </div>
-    </div>
+        <!-- Slush'D -->
+        <div class="speaking-card">
+          <div class="speaking-card__media">
+            <img src="assets/img/slushDjerba.jpeg" alt="Slush’D Djerba 2024">
+          </div>
+          <div class="speaking-card__body">
+            <h3 class="speaking-card__title">Slush’D (Djerba, 2024)</h3>
+            <ul class="speaking-topics">
+              <li><strong>Roundtable:</strong> The Future of Funding in Africa</li>
+              <li><strong>Panel:</strong> Building Bridges — VC insights on Africa’s growth</li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- GITEX Africa -->
-    <div class="work__item">
-      <div class="work__img">
-        <img src="assets/img/GITEX Africa 2.png" alt="GITEX Africa (2023)" />
-      </div>
-      <div class="work__meta">
-        <h3 class="work__title">GITEX Africa (2023)</h3>
-        <ul class="work__topics">
-          <li>The Future of Investment in Africa: Trends, Innovations, and Emerging Opportunities</li>
-        </ul>
-      </div>
-    </div>
+        <!-- AIM Congress -->
+        <div class="speaking-card">
+          <div class="speaking-card__media">
+            <img src="assets/img/AIMcongress.jpeg" alt="AIM Congress Abu Dhabi 2024">
+          </div>
+          <div class="speaking-card__body">
+            <h3 class="speaking-card__title">AIM Congress (Abu Dhabi, 2024)</h3>
+            <ul class="speaking-topics">
+              <li>The rising of Agritech Startups</li>
+            </ul>
+          </div>
+        </div>
 
-  </div>
+        <!-- GITEX Africa -->
+        <div class="speaking-card">
+          <div class="speaking-card__media">
+            <img src="assets/img/GITEX Africa 2.png" alt="GITEX Africa 2023">
+          </div>
+          <div class="speaking-card__body">
+            <h3 class="speaking-card__title">GITEX Africa (2023)</h3>
+            <ul class="speaking-topics">
+              <li>The Future of Investment in Africa</li>
+            </ul>
+          </div>
+        </div>
 
-  <div class="work__container bd-grid" style="margin-top:2rem;">
+        <!-- African Startup Conference -->
+        <div class="speaking-card">
+          <div class="speaking-card__media">
+            <img src="assets/img/AfricanStartupConference.jpeg" alt="African Startup Conference 2023">
+          </div>
+          <div class="speaking-card__body">
+            <h3 class="speaking-card__title">African Startup Conference (Algeria, 2023)</h3>
+            <ul class="speaking-topics">
+              <li>Investing in Africa’s Startups: Local financing solutions</li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- African Startup Conference -->
-    <div class="work__item">
-      <div class="work__img">
-        <img src="assets/img/AfricanStartupConference.jpeg" alt="African Startup Conference (Algeria, 2023)" />
-      </div>
-      <div class="work__meta">
-        <h3 class="work__title">African Startup Conference (Algeria, 2023)</h3>
-        <ul class="work__topics">
-          <li>Investing in Africa’s Startups: Local financing solutions</li>
-        </ul>
-      </div>
-    </div>
+        <!-- Young Founders Program -->
+        <div class="speaking-card">
+          <div class="speaking-card__media">
+            <img src="assets/img/Berlin.jpeg" alt="Young Founders Program Berlin 2023">
+          </div>
+          <div class="speaking-card__body">
+            <h3 class="speaking-card__title">Young Founders Program (Berlin, 2023)</h3>
+            <ul class="speaking-topics">
+              <li>Investing in Emerging Markets vs Europe</li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- Young Founders Program -->
-    <div class="work__item">
-      <div class="work__img">
-        <img src="assets/img/Berlin.jpeg" alt="Young Founders Program (Berlin, 2023)" />
       </div>
-      <div class="work__meta">
-        <h3 class="work__title">Young Founders Program (Berlin, 2023)</h3>
-        <ul class="work__topics">
-          <li>Investing in Emerging Markets vs Europe</li>
-        </ul>
-      </div>
+
+      <button class="carousel__btn carousel__btn--next" type="button"
+        onclick="document.getElementById('track-speaking').scrollBy({left:800,behavior:'smooth'})"
+        aria-label="Scroll right">
+        <i class='bx bx-chevron-right'></i>
+      </button>
     </div>
 
   </div>
 </section>
 
 
-<!--===== ARTICLES =====-->
-<!--===== ARTICLES (CAROUSELS) =====-->
+
+
+<!--===== ARTICLES (2 CAROUSELS) =====-->
 <section class="section" id="writing">
   <h2 class="section-title">Articles</h2>
 
-  <!-- ===== Local styles (move to <head> next to your other helpers) ===== -->
-  <style>
-    /* Container spacing */
-    .articles-wrap{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .articles-group{
-      margin: 0 auto 2.25rem;
-    }
-
-    .articles-group__header{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 12px;
-      margin-bottom: 0.75rem;
-    }
-
-    .articles-group__title{
-      font-weight: 700;
-      margin: 0;
-      opacity: 0.92;
-    }
-
-    /* Carousel */
-    .carousel{
-      position: relative;
-    }
-
-    .carousel__track{
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: 78%;
-      gap: 14px;
-
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-
-      padding: 0.25rem 0.25rem 0.75rem;
-      scrollbar-width: none;         /* Firefox */
-    }
-    .carousel__track::-webkit-scrollbar{ display:none; } /* Chrome/Safari */
-
-    @media (min-width: 560px){
-      .carousel__track{ grid-auto-columns: 52%; }
-    }
-    @media (min-width: 820px){
-      .carousel__track{ grid-auto-columns: 32%; }
-    }
-
-    /* Cards */
-    .article-card{
-      scroll-snap-align: start;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(18,18,18,0.12);
-      background: #fff;
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      transition: 0.2s ease;
-    }
-
-    .article-card:hover{
-      border-color: rgba(18,18,18,0.35);
-      transform: translateY(-2px);
-    }
-
-    .article-card__media{
-      position: relative;
-      height: 150px;
-      background: rgba(18,18,18,0.03);
-      overflow: hidden;
-    }
-
-    .article-card__media img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transform: scale(1.02);
-    }
-
-    /* Optional subtle overlay for readability if images are bright */
-    .article-card__media::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(to top, rgba(0,0,0,0.25), rgba(0,0,0,0.0));
-      pointer-events:none;
-    }
-
-    .article-card__body{
-      padding: 0.95rem 1rem 1rem;
-      display:flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .article-card__title{
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.25;
-      color: rgba(18,18,18,0.92);
-    }
-
-    .article-card__cta{
-      margin-top: auto;
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      font-weight: 700;
-      text-decoration: underline;
-      color: rgba(18,18,18,0.92);
-    }
-
-    /* Carousel arrows */
-    .carousel__btn{
-      position:absolute;
-      top: 58px; /* aligns with media area */
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      border: 1px solid rgba(18,18,18,0.18);
-      background: rgba(255,255,255,0.92);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      transition: 0.2s ease;
-      z-index: 5;
-    }
-    .carousel__btn:hover{
-      border-color: rgba(18,18,18,0.35);
-      transform: translateY(-1px);
-    }
-    .carousel__btn--prev{ left: -8px; }
-    .carousel__btn--next{ right: -8px; }
-
-    /* Hide arrows on small screens (swipe is best) */
-    @media (max-width: 720px){
-      .carousel__btn{ display:none; }
-    }
-
-    /* Divider between categories */
-    .articles-divider{
-      height: 1px;
-      background: rgba(18,18,18,0.10);
-      margin: 1.5rem 0 0;
-    }
-  </style>
 
   <div class="articles-wrap">
 
     <!-- =========================
-         Category 1: Fundraising & VC
+         BUCKET 1: For Founders
          ========================= -->
     <div class="articles-group">
       <div class="articles-group__header">
-        <h3 class="articles-group__title">Fundraising & Venture Capital</h3>
+        <h3 class="articles-group__title">For Founders</h3>
+        <p class="articles-group__subtitle">Fundraising, decision-making, and navigating growth from the inside.</p>
       </div>
 
       <div class="carousel">
         <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Scroll left"
-          onclick="document.getElementById('track-vc').scrollBy({left: -800, behavior: 'smooth'})">
+          onclick="document.getElementById('track-founders').scrollBy({left: -800, behavior: 'smooth'})">
           <i class='bx bx-chevron-left'></i>
         </button>
 
-        <div class="carousel__track" id="track-vc" aria-label="Fundraising & Venture Capital articles">
-
-          <a class="article-card" href="https://www.linkedin.com/pulse/why-do-i-believe-venture-capital-20-zeineb-chabchoub/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
-             target="_blank" rel="noopener">
-            <div class="article-card__media">
-              <img src="assets/img/ar_VC20.png" alt="Why Do I Believe in Venture Capital 2.0? cover" loading="lazy" decoding="async">
-            </div>
-            <div class="article-card__body">
-              <h4 class="article-card__title">Why Do I Believe in Venture Capital 2.0?</h4>
-              <span class="article-card__cta">Read →</span>
-            </div>
-          </a>
+        <div class="carousel__track" id="track-founders" aria-label="Articles for founders">
 
           <a class="article-card" href="https://www.linkedin.com/pulse/when-best-time-raise-money-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
              target="_blank" rel="noopener">
@@ -1116,48 +1217,10 @@ Go Rise: International Mentoring Program (2021-2022)
             </div>
           </a>
 
-        </div>
-
-        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Scroll right"
-          onclick="document.getElementById('track-vc').scrollBy({left: 800, behavior: 'smooth'})">
-          <i class='bx bx-chevron-right'></i>
-        </button>
-      </div>
-
-      <div class="articles-divider"></div>
-    </div>
-
-    <!-- =========================
-         Category 2: Startup Execution & Go-to-Market
-         ========================= -->
-    <div class="articles-group">
-      <div class="articles-group__header">
-        <h3 class="articles-group__title">Startup Execution & Go-to-Market</h3>
-      </div>
-
-      <div class="carousel">
-        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Scroll left"
-          onclick="document.getElementById('track-exec').scrollBy({left: -800, behavior: 'smooth'})">
-          <i class='bx bx-chevron-left'></i>
-        </button>
-
-        <div class="carousel__track" id="track-exec" aria-label="Startup Execution & Go-to-Market articles">
-
-          <a class="article-card" href="https://www.linkedin.com/pulse/market-reality-check-cool-product-isnt-enough-zeineb-chabchoub-d4h2f/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D"
-             target="_blank" rel="noopener">
-            <div class="article-card__media">
-              <img src="assets/img/ar_coolpr.png" alt="Market Reality Check: Cool Product Isn't Enough cover" loading="lazy" decoding="async">
-            </div>
-            <div class="article-card__body">
-              <h4 class="article-card__title">Market Reality Check: "Cool" Product Isn't Enough!</h4>
-              <span class="article-card__cta">Read →</span>
-            </div>
-          </a>
-
           <a class="article-card" href="https://www.linkedin.com/pulse/could-cash-wait-until-product-perfect-zeineb-chabchoub-hafnf/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D"
              target="_blank" rel="noopener">
             <div class="article-card__media">
-              <img src="assets/img/ar_cash.jpeg" alt="Could Cash Wait Until the Product Is Perfect cover" loading="lazy" decoding="async">
+              <img src="assets/img/ar_cash.jpeg" alt="Could Cash Wait Until the Product Is Perfect? cover" loading="lazy" decoding="async">
             </div>
             <div class="article-card__body">
               <h4 class="article-card__title">Could Cash Wait Until the Product Is "Perfect"?</h4>
@@ -1165,10 +1228,21 @@ Go Rise: International Mentoring Program (2021-2022)
             </div>
           </a>
 
+          <a class="article-card" href="https://www.linkedin.com/pulse/market-reality-check-cool-product-isnt-enough-zeineb-chabchoub-d4h2f/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_coolpr.png" alt="Market Reality Check cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Market Reality Check: "Cool" Product Isn't Enough!</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
           <a class="article-card" href="https://www.linkedin.com/pulse/most-dangerous-threats-your-startup-sitting-across-table-chabchoub-q9nnf/?trackingId=fKTJ4BRpQCynD3Ll8xUH7w%3D%3D"
              target="_blank" rel="noopener">
             <div class="article-card__media">
-              <img src="assets/img/ar_threats.jpeg" alt="The Most Dangerous Threats to Your Startup cover" loading="lazy" decoding="async">
+              <img src="assets/img/ar_threats.jpeg" alt="The Most Dangerous Threats cover" loading="lazy" decoding="async">
             </div>
             <div class="article-card__body">
               <h4 class="article-card__title">The Most Dangerous Threats to Your Startup Are Sitting Across the Table</h4>
@@ -1176,37 +1250,10 @@ Go Rise: International Mentoring Program (2021-2022)
             </div>
           </a>
 
-        </div>
-
-        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Scroll right"
-          onclick="document.getElementById('track-exec').scrollBy({left: 800, behavior: 'smooth'})">
-          <i class='bx bx-chevron-right'></i>
-        </button>
-      </div>
-
-      <div class="articles-divider"></div>
-    </div>
-
-    <!-- =========================
-         Category 3: International Growth & Events
-         ========================= -->
-    <div class="articles-group">
-      <div class="articles-group__header">
-        <h3 class="articles-group__title">International Growth & Events</h3>
-      </div>
-
-      <div class="carousel">
-        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Scroll left"
-          onclick="document.getElementById('track-intl').scrollBy({left: -800, behavior: 'smooth'})">
-          <i class='bx bx-chevron-left'></i>
-        </button>
-
-        <div class="carousel__track" id="track-intl" aria-label="International Growth & Events articles">
-
           <a class="article-card" href="https://www.linkedin.com/pulse/16-tips-maximizing-startup-success-international-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
              target="_blank" rel="noopener">
             <div class="article-card__media">
-              <img src="assets/img/ar_16tips.png" alt="16 Tips for maximizing Startup Success at International Events cover" loading="lazy" decoding="async">
+              <img src="assets/img/ar_16tips.png" alt="16 tips cover" loading="lazy" decoding="async">
             </div>
             <div class="article-card__body">
               <h4 class="article-card__title">#16 Tips for maximizing Startup Success at International Events</h4>
@@ -1214,10 +1261,21 @@ Go Rise: International Mentoring Program (2021-2022)
             </div>
           </a>
 
+          <a class="article-card" href="https://www.linkedin.com/pulse/have-you-ever-fell-pit-success-zeineb-chabchoub-ln5oe/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_pit.jpeg" alt="Pit of success cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Have you ever fell into a pit of success?</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
         </div>
 
         <button class="carousel__btn carousel__btn--next" type="button" aria-label="Scroll right"
-          onclick="document.getElementById('track-intl').scrollBy({left: 800, behavior: 'smooth'})">
+          onclick="document.getElementById('track-founders').scrollBy({left: 800, behavior: 'smooth'})">
           <i class='bx bx-chevron-right'></i>
         </button>
       </div>
@@ -1226,50 +1284,29 @@ Go Rise: International Mentoring Program (2021-2022)
     </div>
 
     <!-- =========================
-         Category 4: Strategy, Ecosystems & North Africa
+         BUCKET 2: For Investors & Operators
          ========================= -->
     <div class="articles-group">
       <div class="articles-group__header">
-        <h3 class="articles-group__title">Strategy, Ecosystems & North Africa</h3>
+        <h3 class="articles-group__title">For Investors & Operators</h3>
+        <p class="articles-group__subtitle">Patterns across markets, capital, and ecosystem outcomes.</p>
       </div>
 
       <div class="carousel">
         <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Scroll left"
-          onclick="document.getElementById('track-na').scrollBy({left: -800, behavior: 'smooth'})">
+          onclick="document.getElementById('track-investors').scrollBy({left: -800, behavior: 'smooth'})">
           <i class='bx bx-chevron-left'></i>
         </button>
 
-        <div class="carousel__track" id="track-na" aria-label="Strategy, Ecosystems & North Africa articles">
+        <div class="carousel__track" id="track-investors" aria-label="Articles for investors and operators">
 
-          <a class="article-card" href="https://www.linkedin.com/pulse/would-next-mark-zuckerberg-jeff-bezos-tunisian-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+          <a class="article-card" href="https://www.linkedin.com/pulse/why-do-i-believe-venture-capital-20-zeineb-chabchoub/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
              target="_blank" rel="noopener">
             <div class="article-card__media">
-              <img src="assets/img/ar_markTN.jpeg" alt="Would the next Mark Zuckerberg or Jeff Bezos be Tunisian cover" loading="lazy" decoding="async">
+              <img src="assets/img/ar_VC20.png" alt="Venture Capital 2.0 cover" loading="lazy" decoding="async">
             </div>
             <div class="article-card__body">
-              <h4 class="article-card__title">Would the next Mark Zuckerberg or Jeff Bezos be Tunisian?</h4>
-              <span class="article-card__cta">Read →</span>
-            </div>
-          </a>
-
-          <a class="article-card" href="https://www.linkedin.com/pulse/have-you-ever-fell-pit-success-zeineb-chabchoub-ln5oe/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
-             target="_blank" rel="noopener">
-            <div class="article-card__media">
-              <img src="assets/img/ar_pit.jpeg" alt="Have you ever fell into a pit of success cover" loading="lazy" decoding="async">
-            </div>
-            <div class="article-card__body">
-              <h4 class="article-card__title">Have you ever fell into a pit of success?</h4>
-              <span class="article-card__cta">Read →</span>
-            </div>
-          </a>
-
-          <a class="article-card" href="https://www.linkedin.com/pulse/north-african-startups-from-desert-boardroom-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
-             target="_blank" rel="noopener">
-            <div class="article-card__media">
-              <img src="assets/img/ar_camel.png" alt="North African Startups: From the Desert to the Boardroom cover" loading="lazy" decoding="async">
-            </div>
-            <div class="article-card__body">
-              <h4 class="article-card__title">North African Startups: From the Desert to the Boardroom</h4>
+              <h4 class="article-card__title">Why Do I Believe in Venture Capital 2.0?</h4>
               <span class="article-card__cta">Read →</span>
             </div>
           </a>
@@ -1277,7 +1314,7 @@ Go Rise: International Mentoring Program (2021-2022)
           <a class="article-card" href="https://www.linkedin.com/pulse/which-entrepreneurial-strategy-you-choose-zeineb-chabchoub-49tkf/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
              target="_blank" rel="noopener">
             <div class="article-card__media">
-              <img src="assets/img/ar_strat.png" alt="Which Entrepreneurial Strategy Will You Choose cover" loading="lazy" decoding="async">
+              <img src="assets/img/ar_strat.png" alt="Entrepreneurial strategy cover" loading="lazy" decoding="async">
             </div>
             <div class="article-card__body">
               <h4 class="article-card__title">Which Entrepreneurial Strategy Will You Choose?</h4>
@@ -1285,10 +1322,32 @@ Go Rise: International Mentoring Program (2021-2022)
             </div>
           </a>
 
+          <a class="article-card" href="https://www.linkedin.com/pulse/north-african-startups-from-desert-boardroom-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_camel.png" alt="North African startups cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">North African Startups: From the Desert to the Boardroom</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="https://www.linkedin.com/pulse/would-next-mark-zuckerberg-jeff-bezos-tunisian-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_markTN.jpeg" alt="Zuckerberg Bezos Tunisian cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Would the next Mark Zuckerberg or Jeff Bezos be Tunisian?</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
         </div>
 
         <button class="carousel__btn carousel__btn--next" type="button" aria-label="Scroll right"
-          onclick="document.getElementById('track-na').scrollBy({left: 800, behavior: 'smooth'})">
+          onclick="document.getElementById('track-investors').scrollBy({left: 800, behavior: 'smooth'})">
           <i class='bx bx-chevron-right'></i>
         </button>
       </div>
@@ -1296,6 +1355,7 @@ Go Rise: International Mentoring Program (2021-2022)
 
   </div>
 </section>
+
 
 
 
