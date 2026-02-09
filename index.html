@@ -115,60 +115,7 @@
     .work__item{
       overflow: hidden;
     }
-      /* Articles */
-      .writing__group{
-      margin: 0 auto 1.5rem;
-      max-width: 1000px;
-    }
-    .writing__group-title{
-      font-weight: 700;
-      margin: 0 0 0.75rem;
-      text-align: left;
-      opacity: 0.9;
-    }
-    .writing__container{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.1rem;
-    }
-    .writing__item{
-      border:1px solid rgba(18,18,18,0.12);
-      border-radius:14px;
-      padding:1.05rem 1.1rem;
-      background:#fff;
-      transition:0.2s ease;
-    }
-    .writing__item:hover{
-      border-color:rgba(18,18,18,0.35);
-      transform:translateY(-2px);
-    }
-    .writing__meta{
-      font-size:0.78rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:0.04em;
-      opacity:0.7;
-    }
-    .writing__title{
-      margin:0.45rem 0 0.45rem;
-      font-size:1.02rem;
-      font-weight:700;
-      line-height:1.25;
-    }
-    .writing__link{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top:0.35rem;
-      font-weight:700;
-      text-decoration:underline;
-    }
-    .writing__divider{
-      height:1px;
-      background:rgba(18,18,18,0.10);
-      margin: 1.25rem 0;
-    }
-    
+     
     
   </style>
 </head>
@@ -176,9 +123,7 @@
   <!--===== HEADER =====-->
   <header class="l-header">
   <nav class="nav bd-grid">
-    <div>
-      <a href="#about" class="nav__logo">Zeineb Chabchoub</a>
-    </div>
+
 
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
@@ -968,108 +913,390 @@ Go Rise: International Mentoring Program (2021-2022)
 
 
 <!--===== ARTICLES =====-->
+<!--===== ARTICLES (CAROUSELS) =====-->
 <section class="section" id="writing">
   <h2 class="section-title">Articles</h2>
 
-  <div class="bd-grid" style="justify-items:center;">
+  <!-- ===== Local styles (move to <head> next to your other helpers) ===== -->
+  <style>
+    /* Container spacing */
+    .articles-wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
 
-    <!-- Group 1: Fundraising & Venture Capital -->
-    <div class="writing__group" style="width:100%;">
-      <h3 class="writing__group-title">Fundraising & Venture Capital</h3>
+    .articles-group{
+      margin: 0 auto 2.25rem;
+    }
 
-      <div class="writing__container">
-        <article class="writing__item">
-          <h4 class="writing__title">Why do I believe in Venture Capital 2.0?</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/why-do-i-believe-venture-capital-20-zeineb-chabchoub/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
-            Read →
-          </a>
-        </article>
+    .articles-group__header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 0.75rem;
+    }
 
-        <article class="writing__item">
-          <h4 class="writing__title">When is the best time to raise money?</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/when-best-time-raise-money-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
-            Read →
-          </a>
-        </article>
+    .articles-group__title{
+      font-weight: 700;
+      margin: 0;
+      opacity: 0.92;
+    }
 
-        <article class="writing__item">
-          <h4 class="writing__title">Could cash wait until the product is perfect?</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/could-cash-wait-until-product-perfect-zeineb-chabchoub-hafnf/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D" target="_blank" rel="noopener">
-            Read →
-          </a>
-        </article>
+    /* Carousel */
+    .carousel{
+      position: relative;
+    }
+
+    .carousel__track{
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 78%;
+      gap: 14px;
+
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+
+      padding: 0.25rem 0.25rem 0.75rem;
+      scrollbar-width: none;         /* Firefox */
+    }
+    .carousel__track::-webkit-scrollbar{ display:none; } /* Chrome/Safari */
+
+    @media (min-width: 560px){
+      .carousel__track{ grid-auto-columns: 52%; }
+    }
+    @media (min-width: 820px){
+      .carousel__track{ grid-auto-columns: 32%; }
+    }
+
+    /* Cards */
+    .article-card{
+      scroll-snap-align: start;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(18,18,18,0.12);
+      background: #fff;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.2s ease;
+    }
+
+    .article-card:hover{
+      border-color: rgba(18,18,18,0.35);
+      transform: translateY(-2px);
+    }
+
+    .article-card__media{
+      position: relative;
+      height: 150px;
+      background: rgba(18,18,18,0.03);
+      overflow: hidden;
+    }
+
+    .article-card__media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.02);
+    }
+
+    /* Optional subtle overlay for readability if images are bright */
+    .article-card__media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,0.25), rgba(0,0,0,0.0));
+      pointer-events:none;
+    }
+
+    .article-card__body{
+      padding: 0.95rem 1rem 1rem;
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .article-card__title{
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: rgba(18,18,18,0.92);
+    }
+
+    .article-card__cta{
+      margin-top: auto;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-weight: 700;
+      text-decoration: underline;
+      color: rgba(18,18,18,0.92);
+    }
+
+    /* Carousel arrows */
+    .carousel__btn{
+      position:absolute;
+      top: 58px; /* aligns with media area */
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid rgba(18,18,18,0.18);
+      background: rgba(255,255,255,0.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition: 0.2s ease;
+      z-index: 5;
+    }
+    .carousel__btn:hover{
+      border-color: rgba(18,18,18,0.35);
+      transform: translateY(-1px);
+    }
+    .carousel__btn--prev{ left: -8px; }
+    .carousel__btn--next{ right: -8px; }
+
+    /* Hide arrows on small screens (swipe is best) */
+    @media (max-width: 720px){
+      .carousel__btn{ display:none; }
+    }
+
+    /* Divider between categories */
+    .articles-divider{
+      height: 1px;
+      background: rgba(18,18,18,0.10);
+      margin: 1.5rem 0 0;
+    }
+  </style>
+
+  <div class="articles-wrap">
+
+    <!-- =========================
+         Category 1: Fundraising & VC
+         ========================= -->
+    <div class="articles-group">
+      <div class="articles-group__header">
+        <h3 class="articles-group__title">Fundraising & Venture Capital</h3>
       </div>
 
-      <div class="writing__divider"></div>
-    </div>
+      <div class="carousel">
+        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Scroll left"
+          onclick="document.getElementById('track-vc').scrollBy({left: -800, behavior: 'smooth'})">
+          <i class='bx bx-chevron-left'></i>
+        </button>
 
-    <!-- Group 2: Startup Execution & Go-to-Market -->
-    <div class="writing__group" style="width:100%;">
-      <h3 class="writing__group-title">Startup Execution & Go-to-Market</h3>
+        <div class="carousel__track" id="track-vc" aria-label="Fundraising & Venture Capital articles">
 
-      <div class="writing__container">
-        <article class="writing__item">
-          <h4 class="writing__title">Market reality check: A cool product isn’t enough</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/market-reality-check-cool-product-isnt-enough-zeineb-chabchoub-d4h2f/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D" target="_blank" rel="noopener">
-            Read →
+          <a class="article-card" href="https://www.linkedin.com/pulse/why-do-i-believe-venture-capital-20-zeineb-chabchoub/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_VC20.png" alt="Why Do I Believe in Venture Capital 2.0? cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Why Do I Believe in Venture Capital 2.0?</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
           </a>
-        </article>
 
-        <article class="writing__item">
-          <h4 class="writing__title">The most dangerous threats to your startup are sitting across the table</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/most-dangerous-threats-your-startup-sitting-across-table-chabchoub-q9nnf/?trackingId=fKTJ4BRpQCynD3Ll8xUH7w%3D%3D" target="_blank" rel="noopener">
-            Read →
+          <a class="article-card" href="https://www.linkedin.com/pulse/when-best-time-raise-money-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_besttoVC.gif" alt="When is the best time to raise money? cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">When is the best time to raise money?</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
           </a>
-        </article>
 
-        <article class="writing__item">
-          <h4 class="writing__title">16 tips for maximizing startup success in international markets</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/16-tips-maximizing-startup-success-international-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
-            Read →
-          </a>
-        </article>
+        </div>
+
+        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Scroll right"
+          onclick="document.getElementById('track-vc').scrollBy({left: 800, behavior: 'smooth'})">
+          <i class='bx bx-chevron-right'></i>
+        </button>
       </div>
 
-      <div class="writing__divider"></div>
+      <div class="articles-divider"></div>
     </div>
 
-    <!-- Group 3: Strategy, Ecosystems & North Africa -->
-    <div class="writing__group" style="width:100%;">
-      <h3 class="writing__group-title">Strategy, Ecosystems & North Africa</h3>
+    <!-- =========================
+         Category 2: Startup Execution & Go-to-Market
+         ========================= -->
+    <div class="articles-group">
+      <div class="articles-group__header">
+        <h3 class="articles-group__title">Startup Execution & Go-to-Market</h3>
+      </div>
 
-      <div class="writing__container">
-        <article class="writing__item">
-          <h4 class="writing__title">Which entrepreneurial strategy do you choose?</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/which-entrepreneurial-strategy-you-choose-zeineb-chabchoub-49tkf/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
-            Read →
-          </a>
-        </article>
+      <div class="carousel">
+        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Scroll left"
+          onclick="document.getElementById('track-exec').scrollBy({left: -800, behavior: 'smooth'})">
+          <i class='bx bx-chevron-left'></i>
+        </button>
 
-        <article class="writing__item">
-          <h4 class="writing__title">North African startups: From desert to boardroom</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/north-african-startups-from-desert-boardroom-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
-            Read →
-          </a>
-        </article>
+        <div class="carousel__track" id="track-exec" aria-label="Startup Execution & Go-to-Market articles">
 
-        <article class="writing__item">
-          <h4 class="writing__title">Would the next Mark Zuckerberg or Jeff Bezos be Tunisian?</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/would-next-mark-zuckerberg-jeff-bezos-tunisian-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
-            Read →
+          <a class="article-card" href="https://www.linkedin.com/pulse/market-reality-check-cool-product-isnt-enough-zeineb-chabchoub-d4h2f/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_coolpr.png" alt="Market Reality Check: Cool Product Isn't Enough cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Market Reality Check: "Cool" Product Isn't Enough!</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
           </a>
-        </article>
 
-        <article class="writing__item">
-          <h4 class="writing__title">Have you ever fell in the pit of success?</h4>
-          <a class="writing__link" href="https://www.linkedin.com/pulse/have-you-ever-fell-pit-success-zeineb-chabchoub-ln5oe/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
-            Read →
+          <a class="article-card" href="https://www.linkedin.com/pulse/could-cash-wait-until-product-perfect-zeineb-chabchoub-hafnf/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_cash.jpeg" alt="Could Cash Wait Until the Product Is Perfect cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Could Cash Wait Until the Product Is "Perfect"?</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
           </a>
-        </article>
+
+          <a class="article-card" href="https://www.linkedin.com/pulse/most-dangerous-threats-your-startup-sitting-across-table-chabchoub-q9nnf/?trackingId=fKTJ4BRpQCynD3Ll8xUH7w%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_threats.jpeg" alt="The Most Dangerous Threats to Your Startup cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">The Most Dangerous Threats to Your Startup Are Sitting Across the Table</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
+        </div>
+
+        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Scroll right"
+          onclick="document.getElementById('track-exec').scrollBy({left: 800, behavior: 'smooth'})">
+          <i class='bx bx-chevron-right'></i>
+        </button>
+      </div>
+
+      <div class="articles-divider"></div>
+    </div>
+
+    <!-- =========================
+         Category 3: International Growth & Events
+         ========================= -->
+    <div class="articles-group">
+      <div class="articles-group__header">
+        <h3 class="articles-group__title">International Growth & Events</h3>
+      </div>
+
+      <div class="carousel">
+        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Scroll left"
+          onclick="document.getElementById('track-intl').scrollBy({left: -800, behavior: 'smooth'})">
+          <i class='bx bx-chevron-left'></i>
+        </button>
+
+        <div class="carousel__track" id="track-intl" aria-label="International Growth & Events articles">
+
+          <a class="article-card" href="https://www.linkedin.com/pulse/16-tips-maximizing-startup-success-international-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_16tips.png" alt="16 Tips for maximizing Startup Success at International Events cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">#16 Tips for maximizing Startup Success at International Events</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
+        </div>
+
+        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Scroll right"
+          onclick="document.getElementById('track-intl').scrollBy({left: 800, behavior: 'smooth'})">
+          <i class='bx bx-chevron-right'></i>
+        </button>
+      </div>
+
+      <div class="articles-divider"></div>
+    </div>
+
+    <!-- =========================
+         Category 4: Strategy, Ecosystems & North Africa
+         ========================= -->
+    <div class="articles-group">
+      <div class="articles-group__header">
+        <h3 class="articles-group__title">Strategy, Ecosystems & North Africa</h3>
+      </div>
+
+      <div class="carousel">
+        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Scroll left"
+          onclick="document.getElementById('track-na').scrollBy({left: -800, behavior: 'smooth'})">
+          <i class='bx bx-chevron-left'></i>
+        </button>
+
+        <div class="carousel__track" id="track-na" aria-label="Strategy, Ecosystems & North Africa articles">
+
+          <a class="article-card" href="https://www.linkedin.com/pulse/would-next-mark-zuckerberg-jeff-bezos-tunisian-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_markTN.jpeg" alt="Would the next Mark Zuckerberg or Jeff Bezos be Tunisian cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Would the next Mark Zuckerberg or Jeff Bezos be Tunisian?</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="https://www.linkedin.com/pulse/have-you-ever-fell-pit-success-zeineb-chabchoub-ln5oe/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_pit.jpeg" alt="Have you ever fell into a pit of success cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Have you ever fell into a pit of success?</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="https://www.linkedin.com/pulse/north-african-startups-from-desert-boardroom-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_camel.png" alt="North African Startups: From the Desert to the Boardroom cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">North African Startups: From the Desert to the Boardroom</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="https://www.linkedin.com/pulse/which-entrepreneurial-strategy-you-choose-zeineb-chabchoub-49tkf/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D"
+             target="_blank" rel="noopener">
+            <div class="article-card__media">
+              <img src="assets/img/ar_strat.png" alt="Which Entrepreneurial Strategy Will You Choose cover" loading="lazy" decoding="async">
+            </div>
+            <div class="article-card__body">
+              <h4 class="article-card__title">Which Entrepreneurial Strategy Will You Choose?</h4>
+              <span class="article-card__cta">Read →</span>
+            </div>
+          </a>
+
+        </div>
+
+        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Scroll right"
+          onclick="document.getElementById('track-na').scrollBy({left: 800, behavior: 'smooth'})">
+          <i class='bx bx-chevron-right'></i>
+        </button>
       </div>
     </div>
 
   </div>
 </section>
+
 
 
 
