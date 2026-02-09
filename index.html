@@ -69,32 +69,150 @@
     }
 
     .cta-min i{ font-size:1.1rem; }
+    
+      /* Section header with logo */
+  .section-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .section-brand__logo {
+    width: min(240px, 70vw);   /* responsive width */
+    height: auto;
+    max-height: 54px;          /* keeps it tidy */
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Slightly larger on desktop */
+  @media (min-width: 768px) {
+    .section-brand__logo {
+      width: 260px;
+      max-height: 60px;
+    }
+  }
+  
+      .work__meta{
+      padding: 0.85rem 0.9rem 1rem;
+    }
+    .work__title{
+      margin: 0.65rem 0 0.4rem;
+    }
+    .work__topics{
+      margin: 0;
+      padding-left: 1.05rem;
+      opacity: 0.92;
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+    .work__topics li{
+      margin: 0.25rem 0;
+    }
+    /* Keep cards consistent if your CSS uses hover/box styles */
+    .work__item{
+      overflow: hidden;
+    }
+      /* Articles */
+      .writing__group{
+      margin: 0 auto 1.5rem;
+      max-width: 1000px;
+    }
+    .writing__group-title{
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      text-align: left;
+      opacity: 0.9;
+    }
+    .writing__container{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+    .writing__item{
+      border:1px solid rgba(18,18,18,0.12);
+      border-radius:14px;
+      padding:1.05rem 1.1rem;
+      background:#fff;
+      transition:0.2s ease;
+    }
+    .writing__item:hover{
+      border-color:rgba(18,18,18,0.35);
+      transform:translateY(-2px);
+    }
+    .writing__meta{
+      font-size:0.78rem;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+      opacity:0.7;
+    }
+    .writing__title{
+      margin:0.45rem 0 0.45rem;
+      font-size:1.02rem;
+      font-weight:700;
+      line-height:1.25;
+    }
+    .writing__link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:0.35rem;
+      font-weight:700;
+      text-decoration:underline;
+    }
+    .writing__divider{
+      height:1px;
+      background:rgba(18,18,18,0.10);
+      margin: 1.25rem 0;
+    }
+    
+    
   </style>
 </head>
 <body>
   <!--===== HEADER =====-->
   <header class="l-header">
-    <nav class="nav bd-grid">
-      <div>
-        <a href="#about" class="nav__logo">Zeineb Chabchoub</a>
-      </div>
+  <nav class="nav bd-grid">
+    <div>
+      <a href="#about" class="nav__logo">Zeineb Chabchoub</a>
+    </div>
 
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#about" class="nav__link active-link">About</a></li>
-           <li class="nav__item"><a href="#awards" class="nav__link">Awards</a></li>
-          <li class="nav__item"><a href="#case-studies" class="nav__link">Selected Projects</a></li>
-          <li class="nav__item"><a href="#speaking" class="nav__link">Speaking</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Let’s connect</a></li>
-          
-        </ul>
-      </div>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#about" class="nav__link active-link">About</a>
+        </li>
 
-      <div class="nav__toggle" id="nav-toggle">
-        <i class='bx bx-menu'></i>
-      </div>
-    </nav>
-  </header>
+        <li class="nav__item">
+          <a href="#awards" class="nav__link">Awards</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#case-studies" class="nav__link">Selected Projects</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#speaking" class="nav__link">Speaking</a>
+        </li>
+        <li class="nav__item">
+          <a href="#writing" class="nav__link">Articles</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">Let’s connect</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav__toggle" id="nav-toggle">
+      <i class='bx bx-menu'></i>
+    </div>
+  </nav>
+</header>
+
 
   <main class="l-main">
 
@@ -309,7 +427,19 @@
 
       <!-- Transition: University of Utah -->
       <div class="bd-grid" style="margin-bottom:1.25rem;">
-        <h3 style="text-align:center; font-weight:600; margin-bottom:0.5rem;">The University of Utah</h3>
+      <div class="bd-grid" style="margin-bottom:1.25rem;">
+  <div class="section-brand">
+    <img
+      src="assets/img/Ulogo.png"
+      alt="The University of Utah"
+      class="section-brand__logo"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
+</div>
+
         <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
       </div>
 
@@ -369,7 +499,19 @@
 
       <!-- Transition: GIZ Tunisia -->
 <div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
-  <h3 style="text-align:center; font-weight:600; margin-bottom:0.5rem;">GIZ Tunisia</h3>
+<div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
+  <div class="section-brand">
+    <img
+      src="assets/img/giz-tunisie.jpg"
+      alt="GIZ Tunisia"
+      class="section-brand__logo"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
+</div>
+
   <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
 </div>
 
@@ -386,7 +528,7 @@
       />
     </div>
 
-    <h2 class="skills__subtitle">Digital Transformation Center — GIZ Tunisia</h2>
+    <h2 class="skills__subtitle">Digital Transformation Center</h2>
 <br />
 <p class="skills__text">
   <em>Startup Ecosystem Partner & Startup Expert</em>
@@ -426,7 +568,7 @@
 </h3>
 
 <h4 style="margin-top:0.5rem; font-weight:600;">
-  Flywheel — National Innovation Fund (2021-2024)
+  Flywheel: National Innovation Fund (2021-2024)
 </h4>
 <p style="margin-top:0.25rem;">
   <a href="https://startup.gov.tn/en/startup_ecosystem/flywheel" target="_blank" rel="noopener">
@@ -482,7 +624,7 @@
 
     <!-- 2) STRIDE -->
     <h4 style="margin-top:0.5rem; font-weight:600;">
- STRIDE — Regional Expansion Program: Tunisia → Africa (2024)
+ STRIDE: Regional Expansion Program: Tunisia → Africa (2024)
 </h4>
     <p class="skills__text">
       <a href="https://westerwelle-foundation.com/stride/" target="_blank" rel="noopener">
@@ -628,7 +770,19 @@ Go Rise: International Mentoring Program (2021-2022)
 
       <!-- Transition: Alien Dimension + Newsletter -->
       <div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
-        <h3 style="text-align:center; font-weight:600; margin-bottom:0.5rem;">Alien Dimension</h3>
+       <div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
+  <div class="section-brand">
+    <img
+      src="assets/img/AD logo.png"
+      alt="Alien Dimension"
+      class="section-brand__logo"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
+</div>
+
         <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
       </div>
       
@@ -645,15 +799,16 @@ Go Rise: International Mentoring Program (2021-2022)
       />
     </div>
 
-    <h2 class="skills__subtitle">Alien Dimension — AR EdTech</h2>
+    <h2 class="skills__subtitle">Alien Dimension: AR EdTech Startup</h2>
+<p class="skills__text">
+  <strong>Context.</strong> Alien Dimension is an AR EdTech startup focused on enhancing science learning through curriculum-aligned augmented reality experiences.
+</p>
 
     <p class="skills__text">
       <strong>My role.</strong> Co-Founder & Chief Projects Officer (2018-2021)
     </p>
 
-<p class="skills__text">
-  <strong>Context.</strong> Alien Dimension is an AR EdTech startup focused on enhancing science learning through curriculum-aligned augmented reality experiences.
-</p>
+
 
 <p class="skills__text">
   <strong>Challenge.</strong> Bringing augmented reality into real classrooms required aligning pedagogy, technology, and institutional procurement—while proving learning impact and adoption within a short runway.
@@ -710,47 +865,213 @@ Go Rise: International Mentoring Program (2021-2022)
 
     <!--===== SPEAKING & MEDIA =====-->
     <section class="work section" id="speaking">
-      <h2 class="section-title">Speaking & Media</h2>
+  <h2 class="section-title">Speaking & Media</h2>
 
-      <div class="work__container bd-grid">
-        <div class="work__item">
-          <div class="work__img">
-            <img src="assets/img/slushDjerba.jpeg" alt="Slush’D (Djerba, 2024)" />
-          </div>
-          <h3 class="work__title">Slush’D (Djerba, 2024)</h3>
-        </div>
+  <!-- Local styles (responsive topics, clean spacing) -->
+  <style>
+    .work__meta{
+      padding: 0.85rem 0.9rem 1rem;
+    }
+    .work__title{
+      margin: 0.65rem 0 0.4rem;
+    }
+    .work__topics{
+      margin: 0;
+      padding-left: 1.05rem;
+      opacity: 0.92;
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+    .work__topics li{
+      margin: 0.25rem 0;
+    }
+    /* Keep cards consistent if your CSS uses hover/box styles */
+    .work__item{
+      overflow: hidden;
+    }
+  </style>
 
-        <div class="work__item">
-          <div class="work__img">
-            <img src="assets/img/AIMcongress.jpeg" alt="AIM Congress (Abu Dhabi, 2024)" />
-          </div>
-          <h3 class="work__title">AIM Congress (Abu Dhabi, 2024)</h3>
-        </div>
+  <div class="work__container bd-grid">
 
-        <div class="work__item">
-          <div class="work__img">
-            <img src="assets/img/GITEX Africa 2.png" alt="GITEX Africa (2023)" />
-          </div>
-          <h3 class="work__title">GITEX Africa (2023)</h3>
-        </div>
+    <!-- Slush'D -->
+    <div class="work__item">
+      <div class="work__img">
+        <img src="assets/img/slushDjerba.jpeg" alt="Slush’D (Djerba, 2024)" />
+      </div>
+      <div class="work__meta">
+        <h3 class="work__title">Slush’D (Djerba, 2024)</h3>
+        <ul class="work__topics">
+          <li><strong>Roundtable:</strong> The Future of Funding in Africa</li>
+          <li><strong>Panel:</strong> Building Bridges — VC insights on Africa’s growth</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AIM Congress -->
+    <div class="work__item">
+      <div class="work__img">
+        <img src="assets/img/AIMcongress.jpeg" alt="AIM Congress (Abu Dhabi, 2024)" />
+      </div>
+      <div class="work__meta">
+        <h3 class="work__title">AIM Congress (Abu Dhabi, 2024)</h3>
+        <ul class="work__topics">
+          <li>The rising of Agritech Startups</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GITEX Africa -->
+    <div class="work__item">
+      <div class="work__img">
+        <img src="assets/img/GITEX Africa 2.png" alt="GITEX Africa (2023)" />
+      </div>
+      <div class="work__meta">
+        <h3 class="work__title">GITEX Africa (2023)</h3>
+        <ul class="work__topics">
+          <li>The Future of Investment in Africa: Trends, Innovations, and Emerging Opportunities</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="work__container bd-grid" style="margin-top:2rem;">
+
+    <!-- African Startup Conference -->
+    <div class="work__item">
+      <div class="work__img">
+        <img src="assets/img/AfricanStartupConference.jpeg" alt="African Startup Conference (Algeria, 2023)" />
+      </div>
+      <div class="work__meta">
+        <h3 class="work__title">African Startup Conference (Algeria, 2023)</h3>
+        <ul class="work__topics">
+          <li>Investing in Africa’s Startups: Local financing solutions</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Young Founders Program -->
+    <div class="work__item">
+      <div class="work__img">
+        <img src="assets/img/Berlin.jpeg" alt="Young Founders Program (Berlin, 2023)" />
+      </div>
+      <div class="work__meta">
+        <h3 class="work__title">Young Founders Program (Berlin, 2023)</h3>
+        <ul class="work__topics">
+          <li>Investing in Emerging Markets vs Europe</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!--===== ARTICLES =====-->
+<section class="section" id="writing">
+  <h2 class="section-title">Articles</h2>
+
+  <div class="bd-grid" style="justify-items:center;">
+
+    <!-- Group 1: Fundraising & Venture Capital -->
+    <div class="writing__group" style="width:100%;">
+      <h3 class="writing__group-title">Fundraising & Venture Capital</h3>
+
+      <div class="writing__container">
+        <article class="writing__item">
+          <h4 class="writing__title">Why do I believe in Venture Capital 2.0?</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/why-do-i-believe-venture-capital-20-zeineb-chabchoub/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
+
+        <article class="writing__item">
+          <h4 class="writing__title">When is the best time to raise money?</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/when-best-time-raise-money-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
+
+        <article class="writing__item">
+          <h4 class="writing__title">Could cash wait until the product is perfect?</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/could-cash-wait-until-product-perfect-zeineb-chabchoub-hafnf/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
       </div>
 
-      <div class="work__container bd-grid" style="margin-top:2rem;">
-        <div class="work__item">
-          <div class="work__img">
-            <img src="assets/img/AfricanStartupConference.jpeg" alt="African Startup Conference (Algeria, 2023)" />
-          </div>
-          <h3 class="work__title">African Startup Conference (Algeria, 2023)</h3>
-        </div>
+      <div class="writing__divider"></div>
+    </div>
 
-        <div class="work__item">
-          <div class="work__img">
-            <img src="assets/img/Berlin.jpeg" alt="Young Founders Program (Berlin, 2023)" />
-          </div>
-          <h3 class="work__title">Young Founders Program (Berlin, 2023)</h3>
-        </div>
+    <!-- Group 2: Startup Execution & Go-to-Market -->
+    <div class="writing__group" style="width:100%;">
+      <h3 class="writing__group-title">Startup Execution & Go-to-Market</h3>
+
+      <div class="writing__container">
+        <article class="writing__item">
+          <h4 class="writing__title">Market reality check: A cool product isn’t enough</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/market-reality-check-cool-product-isnt-enough-zeineb-chabchoub-d4h2f/?trackingId=ZpGkR%2B29QdmLLD8Vu5snxQ%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
+
+        <article class="writing__item">
+          <h4 class="writing__title">The most dangerous threats to your startup are sitting across the table</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/most-dangerous-threats-your-startup-sitting-across-table-chabchoub-q9nnf/?trackingId=fKTJ4BRpQCynD3Ll8xUH7w%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
+
+        <article class="writing__item">
+          <h4 class="writing__title">16 tips for maximizing startup success in international markets</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/16-tips-maximizing-startup-success-international-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
       </div>
-    </section>
+
+      <div class="writing__divider"></div>
+    </div>
+
+    <!-- Group 3: Strategy, Ecosystems & North Africa -->
+    <div class="writing__group" style="width:100%;">
+      <h3 class="writing__group-title">Strategy, Ecosystems & North Africa</h3>
+
+      <div class="writing__container">
+        <article class="writing__item">
+          <h4 class="writing__title">Which entrepreneurial strategy do you choose?</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/which-entrepreneurial-strategy-you-choose-zeineb-chabchoub-49tkf/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
+
+        <article class="writing__item">
+          <h4 class="writing__title">North African startups: From desert to boardroom</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/north-african-startups-from-desert-boardroom-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
+
+        <article class="writing__item">
+          <h4 class="writing__title">Would the next Mark Zuckerberg or Jeff Bezos be Tunisian?</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/would-next-mark-zuckerberg-jeff-bezos-tunisian-zeineb-chabchoub-/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
+
+        <article class="writing__item">
+          <h4 class="writing__title">Have you ever fell in the pit of success?</h4>
+          <a class="writing__link" href="https://www.linkedin.com/pulse/have-you-ever-fell-pit-success-zeineb-chabchoub-ln5oe/?trackingId=dg1FPxyqRXyOH4%2BtF42RlA%3D%3D" target="_blank" rel="noopener">
+            Read →
+          </a>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
     <!--===== CONTACT =====-->
 
