@@ -524,3 +524,63 @@ img{
         }
     }
 }
+/* ===== AWARDS CLEAN COMPACT UI ===== */
+
+#awards .awards-grid > div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:22px 18px;
+  gap:6px;                /* less space between logo + text */
+}
+
+/* remove extra paragraph spacing */
+#awards .skills__text{
+  margin:0;
+  line-height:1.4;
+}
+
+/* make titles tighter */
+#awards .skills__text strong{
+  display:block;
+  margin-bottom:2px;
+}
+
+/* LOGO SIZE (all) */
+#awards .award-logo{
+  width:72px;
+  margin-bottom:6px;
+}
+
+/* IIBA logo bigger */
+#awards .award-logo--iiba{
+  width:110px;
+}
+/* ===== AWARDS PERFECT CENTER FIX ===== */
+
+#awards .awards-grid > div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* center the paragraph block itself */
+#awards .skills__text{
+  text-align:center;
+  margin:0 auto;
+}
+
+/* center the title line */
+#awards .skills__text strong{
+  display:block;
+  text-align:center;
+}
+
+/* remove uneven spacing */
+#awards .awards-grid > div img{
+  margin:0 auto 8px auto;
+}
