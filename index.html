@@ -21,21 +21,33 @@
     background: #fff !important;
   }
 }
+
+    @media (max-width: 768px){
+  .nav__menu .nav__link{
+    color: #121212 !important;   /* dark text */
+  }
+
+  .nav__menu .nav__link:hover{
+    color: #000 !important;
+  }
+}
     @media (max-width: 768px){
   .nav__menu{
-    position: fixed; 
     top: 0; right: 0;
-    height: 100vh;
-    z-index: 9999;
   }
 }
     /* Bigger award logos */
-.award-logo{
-  width: 100%;
-  max-width: 320px;   /* was effectively smaller */
-  height: 140px;      /* controls visual size */
-  object-fit: contain;
-  display: block;
+#awards img.award-logo{
+  width: 100% !important;
+  max-width: 380px !important;
+  height: 160px !important;
+  object-fit: contain !important;
+}
+
+/* Give each award card more room */
+#awards .awards-grid{
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 26px !important;
 }
 
     @media (min-width: 768px){
@@ -45,11 +57,6 @@
   }
 }
 
-/* Make the awards grid allow bigger cards */
-.awards-grid{
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
-  gap: 26px !important;
-}
     /* Speaking thumbnails */
     .work__img img {
       width: 100%;
@@ -120,13 +127,19 @@
     padding: 0 1rem;
   }
 
-  .section-brand__logo {
-    width: min(420px, 92vw);  /* bigger */
-  height: auto;
-  max-height: 110px;        /* taller */
-  object-fit: contain;
-  display: block;
+.section-brand__logo{
+  width: min(520px, 92vw) !important;
+  max-height: 120px !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+@media (min-width: 768px){
+  .section-brand__logo{
+    width: 620px !important;
+    max-height: 140px !important;
   }
+}
 
   /* Slightly larger on desktop */
   @media (min-width: 768px) {
