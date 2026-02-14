@@ -9,6 +9,47 @@
 
   <!-- Light helpers + minimalist CTAs (no CSS file changes needed) -->
   <style>
+/* Fix: make the mobile sidebar/menu not transparent */
+@media (max-width: 768px){
+  .nav__menu{
+    background: #fff !important;              /* solid background */
+    box-shadow: 0 12px 30px rgba(0,0,0,.18);  /* optional, looks nicer */
+  }
+
+  /* If your menu text still looks “floating”, force list area too */
+  .nav__list{
+    background: #fff !important;
+  }
+}
+    @media (max-width: 768px){
+  .nav__menu{
+    position: fixed; 
+    top: 0; right: 0;
+    height: 100vh;
+    z-index: 9999;
+  }
+}
+    /* Bigger award logos */
+.award-logo{
+  width: 100%;
+  max-width: 320px;   /* was effectively smaller */
+  height: 140px;      /* controls visual size */
+  object-fit: contain;
+  display: block;
+}
+
+    @media (min-width: 768px){
+  .award-logo{
+    max-width: 360px;
+    height: 160px;
+  }
+}
+
+/* Make the awards grid allow bigger cards */
+.awards-grid{
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 26px !important;
+}
     /* Speaking thumbnails */
     .work__img img {
       width: 100%;
@@ -80,18 +121,18 @@
   }
 
   .section-brand__logo {
-    width: min(240px, 70vw);   /* responsive width */
-    height: auto;
-    max-height: 54px;          /* keeps it tidy */
-    object-fit: contain;
-    display: block;
+    width: min(420px, 92vw);  /* bigger */
+  height: auto;
+  max-height: 110px;        /* taller */
+  object-fit: contain;
+  display: block;
   }
 
   /* Slightly larger on desktop */
   @media (min-width: 768px) {
     .section-brand__logo {
-      width: 260px;
-      max-height: 60px;
+     width: 520px;
+    max-height: 130px;
     }
   }
   
@@ -656,7 +697,7 @@
       <img 
         src="assets/img/DOMAN.png" 
         alt="Doman Innovation Studio" 
-        style="max-width:170px; width:100%; opacity:0.9;"
+        style="max-width:320px; width:100%; opacity:0.9;"
       />
     </div>
           <h2 class="skills__subtitle">Doman Innovation Studio </h2>
@@ -730,7 +771,7 @@
       <img 
         src="assets/img/DTC TN.png" 
         alt="Digital Transformation Center Tunisia" 
-        style="max-width:180px; width:100%; opacity:0.9;"
+        style="max-width:340px; width:100%; opacity:0.9;"
       />
     </div>
 
@@ -1001,7 +1042,7 @@ Go Rise: International Mentoring Program (2021-2022)
       <img 
         src="assets/img/AD.png" 
         alt="Alien Dimension" 
-        style="max-width:220px; width:150%; opacity:0.95;"      />
+        style="max-width:380px; width:150%; opacity:0.95;"      />
     </div>
 
     <h2 class="skills__subtitle">Alien Dimension: AR EdTech Startup</h2>
