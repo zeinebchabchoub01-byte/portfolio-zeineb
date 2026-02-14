@@ -14,8 +14,23 @@
   .nav__menu{
     background:#fff !important;
     box-shadow: 0 12px 30px rgba(0,0,0,.18);
+    position: fixed;
+    top: 0;
+    right: -100%;              /* hidden off-screen */
+    width: 75%;
+    max-width: 360px;
+    height: 100vh;
+    padding: 2rem 1.25rem;
+    transition: right .3s ease;
+    z-index: 9999;
   }
-
+  #nav-menu.show-menu{
+    right: 0;
+  }
+    #nav-toggle{
+    position: relative;
+    z-index: 10000;
+  }
   /* If your menu text still looks “floating”, force list area too */
   .nav__list{
     background: #fff !important;
