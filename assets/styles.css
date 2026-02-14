@@ -856,3 +856,30 @@ li{
     background-color: #fff;
   }
 }
+/* ✅ FORCE mobile menu slide from the right (override all other rules) */
+@media (max-width: 767px){
+  #nav-menu.nav__menu{
+    position: fixed !important;
+    top: var(--header-height) !important;
+    left: auto !important;
+    right: -100% !important;     /* hidden */
+    width: 80% !important;
+    height: calc(100vh - var(--header-height)) !important;
+    overflow-y: auto !important;
+    z-index: 9999 !important;
+  }
+
+  #nav-menu.nav__menu.show-menu{
+    right: 0 !important;         /* visible */
+  }
+}
+#awards .award-logo{
+  width: 160px;
+  max-width: 100%;
+}
+
+@media (min-width:768px){
+  #awards .award-logo{
+    width: 220px;
+  }
+}
