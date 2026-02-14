@@ -35,18 +35,12 @@
   .nav__list{
     background: #fff !important;
   }
-}
-    
-
-    @media (max-width: 768px){
-  .nav__menu .nav__link{
+    .nav__menu .nav__link{
   color:#121212 !important;
   }
-
-  .nav__menu .nav__link:hover{
+    .nav__menu .nav__link:hover{
     color: #000 !important;
   }
-}
 
     /* Bigger award logos */
 #awards img.award-logo{
@@ -1538,6 +1532,38 @@ Go Rise: International Mentoring Program (2021-2022)
 
 
 <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js">
+    <script>
+  (function () {
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    const links = document.querySelectorAll(".nav__menu .nav__link");
+
+    if (!toggle || !menu) return;
+
+    // Ensure CLOSED on load
+    menu.classList.remove("show-menu");
+
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      menu.classList.toggle("show-menu");
+    });
+
+    // Close when clicking any link
+    links.forEach(link => {
+      link.addEventListener("click", () => menu.classList.remove("show-menu"));
+    });
+
+    // Optional: tap outside closes
+    document.addEventListener("click", function (e) {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove("show-menu");
+      }
+    });
+  })();
+</script>
+
+  </script>
+  
 </body>
 </html>
