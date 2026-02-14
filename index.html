@@ -126,27 +126,30 @@
     padding: 0 1rem;
   }
 
+/*
+  Enlarged logos between sections.
+
+  The original design limited the transition logos (e.g., University of Utah or Alien Dimension)
+  to widths around ~520 px and heights around ~130 px. Several reviewers noted that these
+  transitional logos felt too small on larger screens, making them easy to miss. To make
+  these section logos more prominent while still responsive, we increase both their
+  maximum width and height. On mobile screens we cap the width at 92 vw and height at
+  150 px; on larger screens we allow up to 720 px width and 160 px height. The object-fit
+  setting is retained to prevent distortion.
+*/
 .section-brand__logo{
-  width: min(520px, 92vw) !important;
-  max-height: 120px !important;
+  width: min(720px, 92vw) !important;
+  max-height: 150px !important;
   height: auto !important;
   object-fit: contain !important;
 }
 
 @media (min-width: 768px){
   .section-brand__logo{
-    width: 620px !important;
-    max-height: 140px !important;
+    width: 720px !important;
+    max-height: 160px !important;
   }
 }
-
-  /* Slightly larger on desktop */
-  @media (min-width: 768px) {
-    .section-brand__logo {
-     width: 520px;
-    max-height: 130px;
-    }
-  }
   
       .work__meta{
       padding: 0.85rem 0.9rem 1rem;
@@ -723,7 +726,7 @@
 </p>
 
 <p class="skills__text">
-  <strong>What we built.</strong> The U Venture Ecosystem Map (2025)<br />
+  <strong>My role & contributions.</strong> The U Venture Ecosystem Map (2025)<br />
   A strategy and navigation tool combining a visual representation and a back-office database, mapping 100+ programs across 30+ university entities, informed by 30+ interviews with program leads, faculty, and ecosystem operators.
 </p>
 
@@ -850,7 +853,7 @@
 </p>
 
 <p class="skills__text">
-  <strong>What we built.</strong>
+  <strong>My role & contributions.</strong>
   A multi-instrument national innovation fund with clear governance, structured selection and diligence,
   disciplined disbursement, and KPI-driven monitoring—designed to support both startups and
   startup support organizations.
@@ -896,7 +899,7 @@
     <p class="skills__text"><strong>Challenge.</strong> African markets were geographically close but operationally hard to enter for Tunisian founders.</p>
 
     <p class="skills__text">
-      <strong>What we built.</strong> A full-funnel expansion pathway: 60 founders trained → 15 expansion-ready cases → 5 concrete market entries,
+      <strong>My role & contributions.</strong> A full-funnel expansion pathway: 60 founders trained → 15 expansion-ready cases → 5 concrete market entries,
       leveraging Westerwelle Foundation hubs in Tunis, Kigali, Mombasa, and Arusha, and integrating Slush’D Tunisia.
     </p>
 
@@ -911,7 +914,7 @@ Open Innovation Initiatives: B2B Startups Sourcing and Matchmaking
     <p class="skills__text"><strong>Challenge.</strong> B2B startups struggled to break into corporates and SMEs due to slow procurement and unclear entry points.</p>
 
 <p class="skills__text">
-  <strong>What we built.</strong>
+  <strong>My role & contributions.</strong>
   Structured open-innovation pathways covering the full journey: business-need definition with corporates; sourcing startups capable of addressing those needs; startup due diligence and matchmaking; relationship management through PoC signature; and clear PoC scoping and procurement pathways.
 </p>
 
@@ -956,7 +959,7 @@ Partnerships & Delegations
     <p class="skills__text"><strong>Challenge.</strong> Increase global visibility and create real routes to investors, pilots, and partners.</p>
 
    <p class="skills__text">
-  <strong>What we built.</strong>
+  <strong>My role & contributions.</strong>
   A repeatable delegation and partnership model across major international conferences:
 </p>
 
@@ -998,7 +1001,7 @@ CoworkUp: Scaling SSO Capacity (2021-2024)
     <p class="skills__text"><strong>Challenge.</strong> Founder outcomes depend on strong Startup Support Organizations (SSOs), but capacity was uneven.</p>
 
     <p class="skills__text">
-      <strong>What we built.</strong> A national 12-month capacity-building program (scaled from a 3-month pilot), training 90+ SSO staff and introducing shared tools, processes, and QA standards.
+      <strong>My role & contributions.</strong> A national 12-month capacity-building program (scaled from a 3-month pilot), training 90+ SSO staff and introducing shared tools, processes, and QA standards.
     </p>
 
     <p class="skills__text"><strong>Results.</strong> More consistent, higher-quality founder support nationwide.</p>
@@ -1019,7 +1022,7 @@ Go Rise: International Mentoring Program (2021-2022)
     <p class="skills__text"><strong>Challenge.</strong> Early-stage founders lacked structured access to experienced, international mentors.</p>
 
     <p class="skills__text">
-      <strong>What we built.</strong> A 5-month mentoring program for 24 tech founders focused on business models, leadership, and expansion planning.
+      <strong>My role & contributions.</strong> A 5-month mentoring program for 24 tech founders focused on business models, leadership, and expansion planning.
     </p>
 
     <p class="skills__text"><strong>Results.</strong> Founders gained structured guidance and practical support to validate strategy and prepare for growth.</p>
@@ -1073,7 +1076,7 @@ Go Rise: International Mentoring Program (2021-2022)
 </p>
 
 <p class="skills__text">
-  <strong>What we built.</strong> Classroom-ready AR learning modules, piloted with universities and curriculum bodies, alongside a lean product and delivery system to test adoption, learning outcomes, and institutional fit.
+  <strong>My role & contributions.</strong> Classroom-ready AR learning modules, piloted with universities and curriculum bodies, alongside a lean product and delivery system to test adoption, learning outcomes, and institutional fit.
 </p>
 
 <p class="skills__text" style="margin-top:0.75rem;">
