@@ -20,24 +20,24 @@
 /* Fix: make the mobile sidebar/menu not transparent */
 @media (max-width: 768px){
   .nav__menu{
-    background:#fff !important;
+    background: var(--second-color) !important;
     box-shadow: 0 12px 30px rgba(0,0,0,.18);
   }
 
   /* If your menu text still looks “floating”, force list area too */
   .nav__list{
-    background: #fff !important;
+    background: var(--second-color) !important;
   }
 }
     
 
     @media (max-width: 768px){
   .nav__menu .nav__link{
-  color:#121212 !important;
+  color:#fff !important;
   }
 
   .nav__menu .nav__link:hover{
-    color: #000 !important;
+    color: #fff !important;
   }
 }
 
@@ -499,60 +499,9 @@
 
 
   <main class="l-main">
-
-    <!--===== ABOUT =====-->
-   <!-- ✅ COPY/PASTE: Updated ABOUT section (bigger photo, title text, no “I’m”, horizontal buttons) -->
 <section class="about section" id="about">
-  <!-- (2) Replace section title -->
   <h2 class="section-title">Zeineb Chabchoub, MBA</h2>
-    <h3 class="section-title">Fulbright Alumna</h3>
-
-  <!-- Local styles only for this section -->
-  <style>
-    /* (1) Photo bigger but not too big */
-    .about__img img{
-      width:320px;         /* balanced size */
-      max-width:100%;
-      border-radius:16px;
-    }
-    @media (max-width:768px){
-      .about__img img{ width:260px; }
-    }
-
-    /* (4) Horizontal, minimalist buttons */
-    .cta-row{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:flex-start;
-      flex-wrap:nowrap;        /* one line on desktop */
-      margin-top:1.25rem;
-    }
-    .cta-min{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
-      font-size:0.92rem;
-      font-weight:600;
-      border-radius:10px;
-      background:#fff;
-      color:#121212;
-      border:1px solid rgba(18,18,18,0.18);
-      white-space:nowrap;
-      transition:0.2s ease;
-    }
-    .cta-min:hover{
-      border-color:rgba(18,18,18,0.4);
-      transform:translateY(-1px);
-    }
-    .cta-min i{ font-size:1.05rem; }
-
-    /* Mobile wrap */
-    @media (max-width:720px){
-      .cta-row{ flex-wrap:wrap; }
-    }
-  </style>
+  <h3 class="about__small-title">Fulbright Alumna</h3>
 
   <div class="about__container bd-grid">
     <div class="about__img">
@@ -681,52 +630,47 @@ I enjoy figuring things out: starting from uncertainty, defining a scope, and la
       <h2 class="section-title">Selected Projects</h2>
 
       <!-- Transition: University of Utah -->
-  <div class="section-brand">
-    <img
-      src="assets/img/Ulogo.png"
-      alt="The University of Utah"
-      class="section-brand__logo"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
-  </div>
-
-        <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
+      <div class="section-brand">
+        <img
+          src="assets/img/Ulogo.png"
+          alt="The University of Utah"
+          class="section-brand__logo"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
+      <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
 
       <!-- Doman Innovation Studio -->
-    <div class="skills__container bd-grid awards-grid">
-        <div>
-            <div style="display:flex; justify-content:center; margin:0.5rem 0 1.25rem;">
-      <img 
-        src="assets/img/DOMAN.png" 
-        alt="Doman Innovation Studio" 
-        style="width:100%; opacity:0.9;"
-      />
-    </div>
-          <h2 class="skills__subtitle">Doman Innovation Studio </h2>
+      <div class="skills__container bd-grid one-col" style="justify-items:center;">
+        <div style="max-width:920px; width:100%;">
+          <div style="display:flex; justify-content:center; margin:0.5rem 0 1.25rem; width:100%;">
+            <img
+              src="assets/img/DOMAN.png"
+              alt="Doman Innovation Studio"
+              style="width:100%; max-width:720px; opacity:0.9;"
+            />
+          </div>
 
-<p class="skills__text">
-  <strong>My role.</strong> Research Associate / Project Lead 
-</p>
+          <h2 class="skills__subtitle">Doman Innovation Studio</h2>
 
-<p class="skills__text">
-  <strong>Challenge.</strong> The University of Utah has a rich base of founder support, programs, labs, mentors, and funding spread across many entities, but no shared, high-level view of what exists, when it applies, and how to reach it. Leadership also needed to understand how well these programs were actually serving founders to inform a donor's strategic plan.
-</p>
+          <p class="skills__text">
+            <strong>My role.</strong> Research Associate / Project Lead
+          </p>
 
-<p class="skills__text">
-  <strong>Approach.</strong> 
- I led the U Venture Ecosystem Map (2025) project, a navigation tool pairing a visual map with a back-office database, charting 100+ programs across 30+ university entities, informed by 30+ interviews with program leads, faculty, and ecosystem operators. In my second project, which aimed to inform leadership decisions about future projects. I designed the survey, building the database, gathering and cleaning the responses, and creating a dashboard that the team still uses. Alongside it, the core of the work was the analysis: turning unstructured data into clear insights, connecting those insights to what leadership was trying to achieve, and laying out specific steps to get there.
-</p>
+          <p class="skills__text">
+            <strong>Challenge.</strong> The University of Utah has a rich base of founder support, programs, labs, mentors, and funding spread across many entities, but no shared, high-level view of what exists, when it applies, and how to reach it. Leadership also needed to understand how well these programs were actually serving founders to inform a donor's strategic plan.
+          </p>
 
-<p class="skills__text" style="margin-top:0.75rem;">
-  <strong>Outcomes.</strong>
-  Clearer pathways for founders and faster navigation across campus; better alignment across teams around founder Outcomes rather than program ownership; and a shared, working understanding of how the support system operates day to day. The analysis fed directly into the donor strategic plan, and the dashboard remains in use.
-</p>
+          <p class="skills__text">
+            <strong>Approach.</strong>
+            I led the U Venture Ecosystem Map (2025) project, a navigation tool pairing a visual map with a back-office database, charting 100+ programs across 30+ university entities, informed by 30+ interviews with program leads, faculty, and ecosystem operators. In my second project, which aimed to inform leadership decisions about future projects, I designed the survey, built the database, gathered and cleaned the responses, and created a dashboard that the team still uses. Alongside it, the core of the work was the analysis: turning unstructured data into clear insights, connecting those insights to what leadership was trying to achieve, and laying out specific steps to get there.
+          </p>
 
-
+          <p class="skills__text" style="margin-top:0.75rem;">
+            <strong>Outcomes.</strong>
+            Clearer pathways for founders and faster navigation across campus; better alignment across teams around founder outcomes rather than program ownership; and a shared, working understanding of how the support system operates day to day. The analysis fed directly into the donor strategic plan, and the dashboard remains in use.
+          </p>
 
           <p style="margin-top:0.5rem;">
             <a
@@ -737,36 +681,32 @@ I enjoy figuring things out: starting from uncertainty, defining a scope, and la
               Read more: U of U Venture Ecosystem Map
             </a>
           </p>
-        </div>
 
-        <div>
-        <img 
-          src="assets/img/mapdis.png" 
-          alt="U Venture Ecosystem Map" 
-          class="skills__img skills__img--map"
-          id="mapImage"
-        />
+          <div style="display:flex; justify-content:center; margin:1.5rem 0 0; width:100%;">
+            <img
+              src="assets/img/mapdis.png"
+              alt="U Venture Ecosystem Map"
+              class="skills__img skills__img--map"
+              id="mapImage"
+              style="max-width:100%;"
+            />
+          </div>
         </div>
       </div>
 
-
       <!-- Transition: GIZ Tunisia -->
-<div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
-<div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
-  <div class="section-brand">
-    <img
-      src="assets/img/giz-tunisie.png"
-      alt="GIZ Tunisia"
-      class="section-brand__logo"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
-</div>
-
-  <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
-</div>
+      <div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
+        <div class="section-brand">
+          <img
+            src="assets/img/giz-tunisie.png"
+            alt="GIZ Tunisia"
+            class="section-brand__logo"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
+      </div>
 
 <!-- GIZ Tunisia (with logo) -->
 <div class="skills__container bd-grid one-col">
@@ -1008,94 +948,86 @@ Go Rise: International Mentoring Program (2021-2022)
 
       <!-- Transition: Alien Dimension + Newsletter -->
       <div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
-       <div class="bd-grid" style="margin:2.25rem auto 1.25rem;">
-  <div class="section-brand">
-    <img
-      src="assets/img/AD logo.png"
-      alt="Alien Dimension"
-      class="section-brand__logo"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
-</div>
-
+        <div class="section-brand">
+          <img
+            src="assets/img/AD logo.png"
+            alt="Alien Dimension"
+            class="section-brand__logo"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
         <div style="height:1px; background:rgba(18,18,18,0.12);"></div>
       </div>
       
-<div class="skills__container bd-grid">
+      <div class="skills__container bd-grid one-col" style="justify-items:center;">
+        <div style="max-width:920px; width:100%;">
 
-  <div>
+          <!-- Alien Dimension Logo -->
+          <div style="display:flex; justify-content:center; margin:0.5rem 0 1.25rem; width:100%;">
+            <img 
+              src="assets/img/AD.png" 
+              alt="Alien Dimension" 
+              style="width:100%; max-width:720px; opacity:0.95;"      />
+          </div>
 
-    <!-- Alien Dimension Logo -->
-    <div style="display:flex; justify-content:center; margin:0.5rem 0 1.25rem;">
-      <img 
-        src="assets/img/AD.png" 
-        alt="Alien Dimension" 
-        style="width:100%; opacity:0.95;"      />
-    </div>
+          <h2 class="skills__subtitle">Alien Dimension: AR EdTech Startup</h2>
+          <p class="skills__text">
+            <strong>Context.</strong> Alien Dimension was an AR EdTech startup building curriculum-aligned augmented reality experiences to improve how science is taught.
+          </p>
 
-    <h2 class="skills__subtitle">Alien Dimension: AR EdTech Startup</h2>
-<p class="skills__text">
-  <strong>Context.</strong> Alien Dimension was an AR EdTech startup building curriculum-aligned augmented reality experiences to improve how science is taught.
-</p>
+          <p class="skills__text">
+            <strong>My role.</strong> Co-Founder & Chief Projects Officer (2018-2021)
+          </p>
 
-    <p class="skills__text">
-      <strong>My role.</strong> Co-Founder & Chief Projects Officer (2018-2021)
-    </p>
+          <p class="skills__text">
+            <strong>Challenge.</strong> Bringing AR into real classrooms meant aligning three things at once: pedagogy, technology, and institutional procurement, all while proving learning impact and adoption on a short runway.
+          </p>
 
+          <p class="skills__text">
+            <strong>Approach.</strong> We built 2 products: (1) classroom-ready AR learning modules and piloted them with universities and curriculum bodies. (2) a package including AR cards and a mobile app for 2 courses: human anatomy and astronomy.
+          </p>
 
+          <p class="skills__text" style="margin-top:0.75rem;">
+            <strong>Outcomes.</strong>
+            We built AR astronomy and human anatomy courses, partnered with Honoris United Universities and Université Centrale de Tunis to launch an AR-enabled birth lab, raised €150K in pre-seed funding, and built and led a 6-person product and marketing team. The pilots validated real institutional demand for AR learning tools.
+          </p>
 
-<p class="skills__text">
-  <strong>Challenge.</strong> Bringing AR into real classrooms meant aligning three things at once: pedagogy, technology, and institutional procurement, all while proving learning impact and adoption on a short runway.
-</p>
+          <p class="skills__text" style="margin-top:0.75rem;">
+            <strong>Lessons learned.</strong>
+            In my startup experience, I made all the mistakes you should avoid. Read more in my detailed lessons learned newsletter.  <a
+              href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7322056423377367040"
+              target="_blank"
+              rel="noopener"
+              style="margin-left:6px; text-decoration:underline;"
+            >
+              Read more →
+            </a>
+          </p>
 
-<p class="skills__text">
-  <strong>Approach.</strong> We built 2 products: (1) classroom-ready AR learning modules and piloted them with universities and curriculum bodies. (2) a package including AR cards and a mobile app for 2 courses: human anatomy and astronomy.
+          <p style="margin-top:0.75rem;">
+            <a href="http://www.aliendimension.com/#/" target="_blank" rel="noopener">Website</a> ·
+            <a href="https://www.linkedin.com/company/alien-dimension" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a
+              href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7322056423377367040"
+              target="_blank"
+              rel="noopener"
+            >
+              Newsletter
+            </a>
+          </p>
 
-</p>
+          <div style="display:flex; justify-content:center; margin:1.5rem 0 0; width:100%;">
+            <img 
+              src="assets/img/AlienDimension.jpeg" 
+              alt="Alien Dimension in classrooms" 
+              class="skills__img"
+              style="max-width:100%;"
+            />
+          </div>
 
-<p class="skills__text" style="margin-top:0.75rem;">
-  <strong>Outcomes.</strong>
-  We built AR astronomy and human anatomy courses, partnered with Honoris United Universities and Université Centrale de Tunis to launch an AR-enabled birth lab, raised €150K in pre-seed funding, and built and led a 6-person product and marketing team. The pilots validated real institutional demand for AR learning tools.
-</p>
-
-<p class="skills__text" style="margin-top:0.75rem;">
-  <strong>Lessons learned.</strong>
-In my startup experience, I made all the mistakes you should avoid. Read more in my detailed lessons learned newsletter.  <a
-    href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7322056423377367040"
-    target="_blank"
-    rel="noopener"
-    style="margin-left:6px; text-decoration:underline;"
-  >
-    Read more →
-  </a>
-</p>
-
-    <p style="margin-top:0.75rem;">
-      <a href="http://www.aliendimension.com/#/" target="_blank" rel="noopener">Website</a> ·
-      <a href="https://www.linkedin.com/company/alien-dimension" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a
-        href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7322056423377367040"
-        target="_blank"
-        rel="noopener"
-      >
-        Newsletter
-      </a>
-    </p>
-
-  </div>
-
-  <div>
-    <img 
-      src="assets/img/AlienDimension.jpeg" 
-      alt="Alien Dimension in classrooms" 
-      class="skills__img" 
-    />
-  </div>
-
-</div>
+        </div>
+      </div>
 
     </section>
 

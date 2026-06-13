@@ -74,10 +74,17 @@ img {
 .section-title {
   position: relative;
   font-size: var(--h2-font-size);
-  color: var(--first-color);
+  color: #0F4C81;
   margin-top: var(--mb-2);
   margin-bottom: var(--mb-4);
   text-align: center;
+}
+.about .section-title {
+  color: #1B3A5C;
+  margin-bottom: 0.35rem;
+}
+#awards .section-title {
+  color: #0F4C81;
 }
 .section-title::after {
   position: absolute;
@@ -110,7 +117,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
+  background-color: var(--second-color);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
@@ -153,11 +160,15 @@ img {
   top: 2rem;
   background-color: var(--first-color);
 }
+.nav__link.active-link,
+.nav__menu .active-link {
+  color: #fff;
+}
 .nav__logo {
-  color: var(--second-color);
+  color: #fff;
 }
 .nav__toggle {
-  color: var(--second-color);
+  color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -241,8 +252,14 @@ img {
   row-gap: 2rem;
   text-align: center;
 }
-.about__subtitle {
+.about__subtitle,
+.about__small-title {
   margin-bottom: var(--mb-2);
+  text-align: center;
+}
+.about .about__small-title {
+  color: #2C5282;
+  margin-top: 0;
 }
 .about__img {
   justify-self: center;
@@ -460,7 +477,7 @@ img {
     display: none;
   }
   .nav__link {
-    color: var(--second-color);
+    color: #fff;
   }
   .home {
     padding: 8rem 0 2rem;
@@ -713,8 +730,8 @@ li{
 }
 
 .l-header{
-  backdrop-filter: blur(8px);
-  background: rgba(255,255,255,0.75);
+  backdrop-filter: none;
+  background: var(--second-color);
 }
 .img-modal-content{
   animation: zoom .4s ease;
@@ -850,10 +867,10 @@ li{
     right: auto !important;
     top: var(--header-height);
     height: calc(100vh - var(--header-height));
-    background-color: #fff;
+    background-color: var(--second-color);
   }
   .nav__list {
-    background-color: #fff;
+    background-color: var(--second-color);
   }
 }
 /* ✅ FORCE mobile menu slide from the right (override all other rules) */
