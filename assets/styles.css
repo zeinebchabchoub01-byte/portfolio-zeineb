@@ -598,19 +598,20 @@ h1, h2, h3{
 .about__container .cta-row{
   max-width: 680px;
 }
+
+
 @media (min-width: 768px){
-  /* Photo left / text right, with the text held to a tidy measure */
   .about__container{
-    grid-template-columns: 280px minmax(0, 1fr);
+    grid-template-columns: 360px minmax(0, 1fr);
     column-gap: 2.5rem;
-    align-items: start;
+    align-items: center;
   }
   .about__img{
-    justify-self: start;
-    align-self: start;
+    justify-self: center;
+    align-self: center;
   }
   .about__img img{
-    width: 280px;
+    width: 360px;
     border-radius: 14px;
     box-shadow: var(--shadow-soft);
   }
