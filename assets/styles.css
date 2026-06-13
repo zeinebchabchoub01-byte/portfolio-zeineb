@@ -162,7 +162,7 @@ img {
 }
 .nav__link.active-link,
 .nav__menu .active-link {
-  color: #fff;
+  color: #fff !important;
 }
 .nav__logo {
   color: #fff;
@@ -181,7 +181,7 @@ img {
   height: 0.18rem;
   left: 0;
   top: 2rem;
-  background-color: var(--first-color);
+  background-color: #fff; /* force white underline when active */
 }
 
 /*=== Show menu ===*/
@@ -899,4 +899,68 @@ li{
   #awards .award-logo{
     width: 220px;
   }
+}
+
+/* Force active nav link to white for all states (override other rules) */
+.nav__menu .nav__link.active-link,
+.nav__menu .nav__link.active-link:link,
+.nav__menu .nav__link.active-link:visited,
+.nav__menu .nav__link.active-link:focus,
+.nav__menu .nav__link.active-link:hover,
+.nav__menu .nav__link.active-link:active,
+.nav__list .nav__link.active-link,
+.nav__list .nav__link.active-link:link,
+.nav__list .nav__link.active-link:visited,
+.nav__list .nav__link.active-link:focus,
+.nav__list .nav__link.active-link:hover,
+.nav__list .nav__link.active-link:active {
+  color: #fff !important;
+}
+
+.nav__menu .nav__link.active-link::after,
+.nav__list .nav__link.active-link::after {
+  background-color: #fff !important;
+}
+
+/* Also force hover/focus color and underline to white (desktop and mobile) */
+.nav__link:hover,
+.nav__link:focus,
+.nav__menu .nav__link:hover,
+.nav__menu .nav__link:focus,
+.nav__list .nav__link:hover,
+.nav__list .nav__link:focus {
+  color: #fff !important;
+}
+
+.nav__link:hover::after,
+.nav__link:focus::after,
+.nav__menu .nav__link:hover::after,
+.nav__menu .nav__link:focus::after,
+.nav__list .nav__link:hover::after,
+.nav__list .nav__link:focus::after {
+  background-color: #fff !important;
+}
+
+/* Change specific section titles to match header/footer background color */
+#awards .section-title,
+#case-studies .section-title,
+#speaking .section-title,
+#writing .section-title,
+#contact .section-title {
+  color: var(--second-color) !important;
+}
+
+/* About section: keep CTAs on a single line on desktop */
+.cta-row{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:nowrap; /* force one line on wider screens */
+  margin-top:0.75rem;
+}
+
+@media (max-width:720px){
+  .cta-row{ flex-wrap:wrap; }
+  .cta-row .cta-min{ width:100%; justify-content:center; }
 }

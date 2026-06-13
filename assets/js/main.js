@@ -34,6 +34,31 @@ if (img){
   img.addEventListener("click", () => openModalWith(img.src));
 }
 
+// Make AlienDimension image open the same modal when clicked
+const alienImg = document.getElementById("alienImage");
+if (alienImg){
+  alienImg.addEventListener("click", () => openModalWith(alienImg.src));
+}
+
+// About section: Read more / Read less toggle
+const aboutToggle = document.getElementById('about-toggle');
+const aboutMore = document.getElementById('about-more');
+if (aboutToggle && aboutMore){
+  aboutToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isVisible = aboutMore.style.display !== 'none';
+    if (isVisible){
+      aboutMore.style.display = 'none';
+      aboutToggle.textContent = 'Read more';
+      aboutToggle.setAttribute('aria-expanded','false');
+    } else {
+      aboutMore.style.display = 'inline';
+      aboutToggle.textContent = 'Read less';
+      aboutToggle.setAttribute('aria-expanded','true');
+    }
+  });
+}
+
 if (closeBtn){
   closeBtn.addEventListener("click", closeModal);
 }
