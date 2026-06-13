@@ -580,11 +580,40 @@ h1, h2, h3{
 
 /* Safer container gutters on mobile */
 .bd-grid{
-  width: min(1100px, 100%);
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: min(980px, 100%);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ===== READING-WIDTH POLISH (2026) ===== */
+/* About: cap the text column to a comfortable reading measure so paragraphs
+   don't read as a wall. Cards/projects keep the full 980px above. */
+.about__container.bd-grid{
+  width: min(980px, 100%);
+}
+.about__text,
+.about__container .about__text + p,
+.about__container .cta-row{
+  max-width: 680px;
+}
+@media (min-width: 768px){
+  /* Photo left / text right, with the text held to a tidy measure */
+  .about__container{
+    grid-template-columns: 280px minmax(0, 1fr);
+    column-gap: 2.5rem;
+    align-items: start;
+  }
+  .about__img{
+    justify-self: start;
+    align-self: start;
+  }
+  .about__img img{
+    width: 280px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-soft);
+  }
 }
 
 /* Make sections breathe */
