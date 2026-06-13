@@ -49,7 +49,7 @@ if (aboutToggle && aboutMore){
     const isVisible = aboutMore.style.display !== 'none';
     if (isVisible){
       aboutMore.style.display = 'none';
-      aboutToggle.textContent = 'Read more';
+      aboutToggle.textContent = '...';
       aboutToggle.setAttribute('aria-expanded','false');
     } else {
       aboutMore.style.display = 'inline';
