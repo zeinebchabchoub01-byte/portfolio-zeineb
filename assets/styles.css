@@ -1004,3 +1004,45 @@ li{
   .cta-row{ flex-wrap:wrap; }
   .cta-row .cta-min{ width:100%; justify-content:center; }
 }
+
+/* ===== WORKED WITH ===== */
+/* PASTE IN styles.css: at the very end of the file */
+.worked-with{
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+.worked-with__grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 per row on mobile */
+  gap: 1.75rem 2rem;
+  align-items: center;
+  justify-items: center;
+}
+.worked-with__item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+}
+.worked-with__item img{
+  width: auto;
+  max-width: 100%;
+  max-height: 64px;            /* uniform visual height for every logo */
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.72;
+  transition: all .3s ease;
+}
+.worked-with__item img:hover{
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Desktop: 4 per row -> two tidy rows of four */
+@media (min-width: 768px){
+  .worked-with__grid{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+}
