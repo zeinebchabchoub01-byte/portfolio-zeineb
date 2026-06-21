@@ -602,7 +602,7 @@ h1, h2, h3{
 
 @media (min-width: 768px){
   .about__container{
-    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-columns: 250px minmax(0, 1fr);
     column-gap: 2.5rem;
     align-items: center;
   }
@@ -611,7 +611,7 @@ h1, h2, h3{
     align-self: center;
   }
   .about__img img{
-    width: 200px;
+    width: 250px;
     border-radius: 14px;
     box-shadow: var(--shadow-soft);
   }
