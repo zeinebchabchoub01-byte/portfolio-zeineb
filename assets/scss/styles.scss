@@ -590,11 +590,11 @@ img{
     /* (1) Photo bigger but not too big */
 
 .about__img {
-  min-width: 4000px;
+  min-width: 400px;
 }
 .about__img img {
   width: 100% !important;
-  border-radius: 16px;
+  border-radius: 40px;
 }
 @media (max-width: 768px){
   .about__img { min-width: unset; }
