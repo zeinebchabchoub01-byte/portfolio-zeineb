@@ -588,14 +588,18 @@ img{
   margin:0 auto 8px auto;
 }
     /* (1) Photo bigger but not too big */
-    .about__img img{
-      width:400px;         /* balanced size */
-      max-width:100%;
-      border-radius:16px;
-    }
-    @media (max-width:768px){
-      .about__img img{ width:300px; }
-    }
+
+.about__img {
+  min-width: 340px;
+}
+.about__img img {
+  width: 100% !important;
+  border-radius: 16px;
+}
+@media (max-width: 768px){
+  .about__img { min-width: unset; }
+  .about__img img { width: 300px !important; }
+}
 
     /* (4) Horizontal, minimalist buttons */
     .cta-row{
