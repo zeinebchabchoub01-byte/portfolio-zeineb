@@ -589,12 +589,12 @@ img{
 }
     /* (1) Photo bigger but not too big */
     .about__img img{
-      width:320px;         /* balanced size */
+      width:400px;         /* balanced size */
       max-width:100%;
       border-radius:16px;
     }
     @media (max-width:768px){
-      .about__img img{ width:260px; }
+      .about__img img{ width:300px; }
     }
 
     /* (4) Horizontal, minimalist buttons */
