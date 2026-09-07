@@ -147,7 +147,18 @@
     max-height: 140px !important;
   }
 }
-
+/* Bigger about photo */
+.about__img {
+  min-width: 340px;
+}
+.about__img img {
+  width: 100% !important;
+  border-radius: 16px;
+}
+@media (max-width: 768px){
+  .about__img { min-width: unset; }
+  .about__img img { width: 300px !important; }
+}
   /* Slightly larger on desktop */
   @media (min-width: 768px) {
     .section-brand__logo {
