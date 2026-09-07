@@ -419,11 +419,11 @@ img{
         }
     }
 
-    .about__container{
-        grid-template-columns: repeat(2,1fr);
-        align-items: center;
-        text-align: initial;
-    }
+.about__container{
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  text-align: initial;
+}
 
     .skills__container{
         grid-template-columns: .7fr;
@@ -590,15 +590,15 @@ img{
     /* (1) Photo bigger but not too big */
 
 .about__img {
-  min-width: 4000px;
+  min-width: 400px;
 }
 .about__img img {
-  width: 1000% !important;
-  border-radius: 160px;
+  width: 100% !important;
+  border-radius: 16px;
 }
-@media (max-width: 7680px){
+@media (max-width: 768px){
   .about__img { min-width: unset; }
-  .about__img img { width: 3000px !important; }
+  .about__img img { width: 300px !important; }
 }
 
     /* (4) Horizontal, minimalist buttons */
