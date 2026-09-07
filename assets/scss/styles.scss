@@ -590,15 +590,15 @@ img{
     /* (1) Photo bigger but not too big */
 
 .about__img {
-  min-width: 400px;
+  min-width: 4000px;
 }
 .about__img img {
-  width: 150% !important;
-  border-radius: 16px;
+  width: 1000% !important;
+  border-radius: 160px;
 }
-@media (max-width: 768px){
+@media (max-width: 7680px){
   .about__img { min-width: unset; }
-  .about__img img { width: 300px !important; }
+  .about__img img { width: 3000px !important; }
 }
 
     /* (4) Horizontal, minimalist buttons */
